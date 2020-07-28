@@ -14,3 +14,5 @@ django-debug-toolbar = "^2.2"
 [build-system]
 requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
+
+
