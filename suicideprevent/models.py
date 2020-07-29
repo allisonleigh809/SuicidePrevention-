@@ -6,7 +6,7 @@ class Mood(models.Model):
     date_mood = models.DateField(null=True, blank=True)
     sleep_tracker= models.CharField(max_length=255, null=True, blank=True)
     date_sleep = models.DateField(null=True, blank=True)
-    ways_help = models.CharField(max_length=255, null=True, blank=True)
+    affirmations = models.CharField(max_length=255, null=True, blank=True)
     notification_alerts = models.CharField(max_length=255, null=True, blank=True)
     self_care = models.CharField(max_length=255, null=True, blank=True)
     emergency_contact = models.CharField(max_length=255, null=True, blank=True)
