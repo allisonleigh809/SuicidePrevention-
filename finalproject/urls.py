@@ -17,19 +17,20 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.urls import include, path
+
 from suicideprevent import views as suicideprevent_views
+
 urlpatterns = [
 path('accounts/', include('registration.backends.simple.urls')),
     path('admin/', admin.site.urls),
     
-    path('', suicideprevent_views.list_contacts,
-    name='list_contacts'), 
+    path('', suicideprevent_views.mood_tracker,
+    name='mood_tracker'),
+    path('moods/add', suicideprevent_views.add_moods, name='add_moods'),
     
-    path('moods/add', suicideprevent_views.add_contacts, name='add_contacts'),
+    path('moods/<int:pk>/delete/', suicideprevent_views.delete_moods, name='delete_moods'),
     
-    path('moods/<int:pk>/delete/', suicideprevent_views.delete_contacts, name='delete_contacts'),
-    
-    path('moods/<int:pk>/edit/',suicideprevent_views.edit_contacts, name='edit_contacts'),
+    path('moods/<int:pk>/edit/',suicideprevent_views.edit_moods, name='edit_moods'),
 ]
 
 
@@ -42,3 +43,7 @@ if settings.DEBUG:
         # url(r'^__debug__/', include(debug_toolbar.urls)),
     ] + urlpatterns
 
+
+# add to url into views when created line 25-26
+# path('', suicideprevent_views.mood_tracker,
+#       name='mood_tracker'), 
