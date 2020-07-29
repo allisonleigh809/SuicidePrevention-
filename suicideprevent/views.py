@@ -1,41 +1,47 @@
 from django.shortcuts import render
+from .models import Mood 
+from .forms import moodsForm
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect, get_object_or_404
+from django.db import models
+from django.contrib.auth.models import User
 
 # Create your views here.
-def list_albums(request):
-  albums = Album.objects.all()
-  return render(request, "album/list_albums.html",                        {"albums": albums})
+def list_contacts(request):
+  moods = Mood.objects.all()
+  return render(request, "mood/list_contacts.html",                        {"moods": moods})
   
-def add_albums(request):
+def add_contacts(request):
     if request.method == 'GET':
-        form = albumsForm()
+        form = moodsForm()
     else:
-        form = albumsForm(data=request.POST)
+        form = moodsForm(data=request.POST)
         if form.is_valid():
             form.save()
-            return redirect(to='list_albums')
+            return redirect(to='list_contacts')
 
-    return render(request, "album/add_albums.html", {"form": form})  
+    return render(request, "mood/add_contacts.html", {"form": form})  
 
-def delete_albums(request, pk):
-    album = get_object_or_404(Album, pk=pk)
+def delete_moods(request, pk):
+    mood = get_object_or_404(Mood, pk=pk)
     if request.method == 'POST':
-        album.delete()
-        return redirect(to='list_albums')
+        mood.delete()
+        return redirect(to='list_contacts')
 
-    return render(request, "album/delete_albums.html",
-                  {"album": album})
+    return render(request, "mood/delete_contacts.html",
+                  {"mood": mood})
 
-def edit_albums(request, pk):
-    album = get_object_or_404(Album, pk=pk)
+def edit_contacts(request, pk):
+    mood = get_object_or_404(Mood, pk=pk)
     if request.method == 'GET':
-        form = albumsForm(instance=album)
+        form = moodsForm(instance=mood)
     else:
-        form = albumsForm(data=request.POST, instance=album)
+        form = moodsForm(data=request.POST, instance=mood)
         if form.is_valid():
             form.save()
-            return redirect(to='list_albums')
+            return redirect(to='list_contacts')
 
-    return render(request, "album/edit_albums.html", {
+    return render(request, "mood/edit_contacts.html", {
         "form": form,
-        "album": album
+        "mood": mood
     })
