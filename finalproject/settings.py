@@ -25,7 +25,7 @@ SECRET_KEY = 'tv0p!@=nn1p_jpqxn5$fly^x6ha%jz#$liav4yw^vvk-*djf$b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['suicideprevention.allisonleigh808.repl.co', 'suicideprevention.allisonleigh808.repl.co']
+ALLOWED_HOSTS = ['suicideprevention.allisonleigh808.repl.co', 'suicideprevention--allisonleigh808.repl.co']
 
 
 # Application definition
@@ -37,6 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Third-party
+    'debug_toolbar',
+    'django_extensions',
+
+    # Project-specific
+    'users',
+    'suicideprevent',
 ]
 
 MIDDLEWARE = [

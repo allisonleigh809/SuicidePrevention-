@@ -15,7 +15,30 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from django.conf import settings
+from django.urls import include, path
+from suicideprevent import views as suicideprevent_views
 urlpatterns = [
-
+path('accounts/', include('registration.backends.simple.urls')),
+    path('admin/', admin.site.urls),
+    
+    path('', suicideprevent_views.list_contacts,
+    name='list_contacts'), 
+    
+    path('moods/add', suicideprevent_views.add_contacts, name='add_contacts'),
+    
+    path('moods/<int:pk>/delete/', suicideprevent_views.delete_contacts, name='delete_contacts'),
+    
+    path('moods/<int:pk>/edit/',suicideprevent_views.edit_contacts, name='edit_contacts'),
 ]
+
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        path('__debug__/', include(debug_toolbar.urls)),
+
+        # For django versions before 2.0:
+        # url(r'^__debug__/', include(debug_toolbar.urls)),
+    ] + urlpatterns
+
