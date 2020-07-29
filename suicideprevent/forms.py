@@ -10,5 +10,5 @@ class moodsForm(forms.ModelForm):
             'notification_alerts',
             'emergency_contact',
             'location',
-            'ways_help',    
+            'resources',    
         ]
