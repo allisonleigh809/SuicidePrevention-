@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mood</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.11.1/tachyons.css">
+   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body class="sans-serif pv3 ph2">
+  <div class="mw9 center">
+    {% block content %}
+    {% endblock %}
+  </div>
+</body>
+</html>
