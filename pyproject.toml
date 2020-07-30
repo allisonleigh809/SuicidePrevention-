@@ -9,6 +9,8 @@ python = "^3.8"
 Django = "^3.0.8"
 django-registration-redux = "^2.8"
 django-debug-toolbar = "^2.2"
+environ = "^1.0"
+django-environ = "^0.4.5"
 [tool.poetry.dev-dependencies]
 
 [build-system]
