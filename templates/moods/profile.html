@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Profile</h1>
+
+<div>
+  <form action="{% url 'profile' pk=mood.pk %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div>
+      <button type="submit">Profile</button>
+    </div>
+    <a href="{% url 'mood_tracker' %}">Go Back</a>
+  </form>
+</div>
+{% endblock %}
