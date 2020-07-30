@@ -23,7 +23,7 @@ background: radial-gradient(circle, rgba(215,253,236,1) 0%, rgba(178,228,219,1) 
       <h3>{{mood.self_care }}</h3>
       <h3>{{mood.emergency_contact }}</h3> -->
       <a class="blue" href="{% url 'mood_tracker' pk=mood.pk %}">Mood Tracker</a><br> 
-    <a class="blue" href="{% url 'profile' pk=mood.pk %}">Profile</a>
+    <a class="blue" href="{% url 'profile_form' pk=mood.pk %}">Profile</a>
     </div>
 
     

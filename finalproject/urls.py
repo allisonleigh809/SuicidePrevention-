@@ -31,6 +31,12 @@ path('accounts/', include('registration.backends.simple.urls')),
     path('moods/<int:pk>/delete/', suicideprevent_views.delete_moods, name='delete_moods'),
     
     path('moods/<int:pk>/edit/',suicideprevent_views.edit_moods, name='edit_moods'),
+    # put in profile and mood tracker in url
+    path('moods/<int:pk>/edit/',suicideprevent_views.profile_form, name='profile_form'),
+
+    patterns('accounts.views',
+                       url(r'^view_profile/$', 'view_profile', name ='view_profile'),
+                       url(r'^view_profile/edit_profile/$', 'edit_profile', name ='edit_profile')
 ]
 
 

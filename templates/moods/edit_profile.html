@@ -1,0 +1,56 @@
+<!-- {% extends "base.html" %}
+
+
+<form method="post">
+  {% csrf_token %}
+  {{ user_form.as_p }}
+  {{ profile_form.as_p }}
+  <button type="submit">Save changes</button>
+
+  <h2>{{ user.get_full_name }}</h2>
+  <ul>
+  <li>Username: {{ user.username }}</li>
+  <li>Location: {{ user.profile.location }}</li>
+  <li>Birth Date: {{ user.profile.birth_date }}</li>
+</ul>
+
+
+</form>
+
+<!-- {% block content %}
+<h1>Profile</h1>
+
+<a href="{% url 'profile' %}">Profile</a>
+
+<div>
+  <form action="{% url 'profile' pk=mood.pk %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div>
+      <button type="submit">Profile</button>
+    </div>
+    <a href="{% url 'mood_tracker' %}">Go Back</a>
+  </form>
+</div> -->
+{% endblock %} -->
+
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Profile</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+        {{ form.as_table }}
+        {{ profile_form.as_table }}
+        </table>
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+</div>
+
+{% endblock %}
