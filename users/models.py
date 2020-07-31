@@ -23,4 +23,3 @@ def save_user_profile(sender, instance, **kwargs):
 class User(User):
     name = models.CharField(max_length=255, null=True, blank=True)
     emergency_contact_2 = models.CharField(max_length=255, null=True, blank=True)
-
