@@ -47,5 +47,5 @@ def edit_moods(request, pk):
     })
 
 def mood_tracker(request):
-    return render(request, "moods/mood_tracker.html",
+    return render(request, "moods/list_moods.html",
 )
