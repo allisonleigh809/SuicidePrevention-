@@ -13,6 +13,7 @@ class Mood(models.Model):
     profile_face = models.CharField(max_length=255, null=True, blank=True)
     location = models.CharField(max_length=255, null=True, blank=True)
     resources = models.CharField(max_length=255, null=True, blank=True)
+    my_week = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
          return f"{self.mood_tracker}"
