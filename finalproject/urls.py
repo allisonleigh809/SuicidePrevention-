@@ -41,6 +41,9 @@ path('accounts/', include('registration.backends.simple.urls')),
 
    path('moods/adventures/',suicideprevent_views.adventures, name='adventures'),
 
+   path('moods/course/',suicideprevent_views.course, name='course'),
+
+
 ]
 
 

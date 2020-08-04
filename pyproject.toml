@@ -11,6 +11,7 @@ django-registration-redux = "^2.8"
 django-debug-toolbar = "^2.2"
 django-extensions = "^3.0.3"
 django-environ = "^0.4.5"
+django-location-field = "^2.1.0"
 [tool.poetry.dev-dependencies]
 
 [build-system]
