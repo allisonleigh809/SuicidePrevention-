@@ -49,3 +49,19 @@ def edit_moods(request, pk):
 def mood_tracker(request):
     return render(request, "moods/list_moods.html",
 )
+
+def self_care(request):
+      return render(request, "moods/self_care.html")
+
+def resources(request):
+      return render(request, "moods/resouces.html")
+
+def health(request):
+      return render(request, "moods/health.html")
+
+def opportunites(request):
+      return render(request, "moods/opportunites.html")
+
+def adventures(request):
+      return render(request, "moods/adventures.html")
+      

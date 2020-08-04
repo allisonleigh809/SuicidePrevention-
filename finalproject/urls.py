@@ -31,8 +31,16 @@ path('accounts/', include('registration.backends.simple.urls')),
     path('moods/<int:pk>/delete/', suicideprevent_views.delete_moods, name='delete_moods'),
     
     path('moods/<int:pk>/edit/',suicideprevent_views.edit_moods, name='edit_moods'),
+
+    path('moods/self-care/',suicideprevent_views.self_care, name='self_care'),
     # put in profile and mood tracker in url
    
+   path('moods/health/',suicideprevent_views.health, name='health'),
+
+   path('moods/opportunites/',suicideprevent_views.opportunites, name='opportunites'),
+
+   path('moods/adventures/',suicideprevent_views.adventures, name='adventures'),
+
 ]
 
 
