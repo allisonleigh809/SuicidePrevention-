@@ -4,12 +4,38 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Self Care</title> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js">
+	</script>
   </head>
+  <body>
+    <div class="navbar-item has-dropdown is-hoverable">
+</div>
+    <nav class="navbar" role="navigation" aria-label="dropdown navigation">
+  <div class="navbar-item has-dropdown is-hoverable">
+    <a class="navbar-link">
+      <a href="{% url 'homepage' %}">M & M</a>
+    </a>
+    <a class="navbar-link">
   <a href="{% url 'resources' %}">Resources</a>
+  </a>
+  <a class="navbar-link">
 <a href="{% url 'health' %}">Health</a>
+</a>
+<a class="navbar-link">
 <a href="{% url 'opportunites' %}">Opportunites</a>
+</a>
+<a class="navbar-link">
 <a href="{% url 'adventures' %}">Adventures</a>
-  
+</a>
+<hr class="navbar-divider">
+      <div class="navbar-item">
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- </ul> -->
+  <!-- </div> -->
   <h1>Self Care</h1>
+  </body>
+
   

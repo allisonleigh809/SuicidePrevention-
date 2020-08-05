@@ -16,7 +16,7 @@
 			<div class="container">
 				<div class="navbar-brand">
 					<a class="navbar-item">
-						<img src="https://www.canva.com/design/DAEDkgCU4oU/JkC6y8RbWifCBnt2XG3EWA/view?utm_content=DAEDkgCU4oU&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink alt"="Logo">
+						<img src="https://www.canva.com/design/DAEDkgCU4oU/JkC6y8RbWifCBnt2XG3EWA/view?utm_content=DAEDkgCU4oU&utm_campaign=designshare&utm_medium=link&utm_source=viewer"="Logo">
           </a>
           <span class="navbar-burger burger" data-target="navbarMenuHeroB">
             <span></span>
@@ -24,23 +24,26 @@
             <span></span>
           </span>
         </div>
+        
         <div id="navbarMenuHeroB" class="navbar-menu">
           <div class="navbar-end">
             <a class="navbar-item is-active">
+              <i class="fa fa-home"></i>
               Home
             </a>
             <a class="navbar-item">
               Profile
-            </a>
+            <!-- </a>
             <a class="navbar-item">
               Documentation
-            </a>
-            <span class="navbar-item">
+            </a> -->
+            <!-- <span class="navbar-item">
               <a class="button is-info is-inverted">
                 <span class="icon">
                 <i class="fas fa-home"></i>
             </span>
-                <span>Download</span>
+                <span>Download</span> -->
+                
               </a>
             </span>
           </div>
@@ -105,16 +108,31 @@
       <div class="tile is-parent">
         <article class="tile is-child notification is-info">
           <p class="title">Moods</p>
-          <p class="subtitle">M & M</p>
+          <p class="subtitle">Modd Tracker</p>
           <figure class="M & M">
-            <img src="https://cdn2.vectorstock.com/i/thumb-large/20/96/african-american-woman-face-profile-beauty-sign-vector-1352096.jpg">
+            <label class="checkbox">
+  <ul>
+  <input type="checkbox">
+<span class="icon">
+<i class="far fa-smile"></i>
+</ul>
+
+<ul>
+<input type="checkbox">
+<span class="icon">
+<i class="far fa-meh"></i>
+</ul>
+</span>
+</label>
+            <!-- <img src="https://cdn2.vectorstock.com/i/thumb-large/20/96/african-american-woman-face-profile-beauty-sign-vector-1352096.jpg"> -->
           </figure>
         </article>
       </div>
     </div>
     <div class="tile is-parent">
       <article class="tile is-child notification is-danger">
-        <p class="title">Reach Out Resources</p>
+        <button class="button is-warning is-hovered"
+        <a href="{% url 'resources' %}"<p class="title">Reach Out Resources</p></button>
         <p class="subtitle">List of Resources and Contacts</p>
         <div class="content">
           <!-- Content -->

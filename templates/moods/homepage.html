@@ -11,11 +11,33 @@
     <title>M & M</title> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
   </head>
+  <div class="navbar-item has-dropdown is-hoverable">
+</div>
+    <nav class="navbar" role="navigation" aria-label="dropdown navigation">
+  <div class="navbar-item has-dropdown is-hoverable">
+
+    <a class="navbar-link">
   <a href="{% url 'homepage' %}">M & M</a>
+  </a>
+
+  <a class="navbar-link">
   <a href="{% url 'self_care' %}">Self Care</a>
+  </a>
+
+  <a class="navbar-link">
   <a href="{% url 'resources' %}">Resources</a>
+  </a>
+
+  <a class="navbar-link">
 <a href="{% url 'health' %}">Health</a>
+</a>
+
+<a class="navbar-link">
 <a href="{% url 'opportunites' %}">Opportunites</a>
+</a>
+
+<a class="navbar-link">
 <a href="{% url 'adventures' %}">Adventures</a>
+</a>
   <h1>M & M</h1>
 {% endblock content %}

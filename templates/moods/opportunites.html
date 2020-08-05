@@ -7,11 +7,30 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
   </head>
   <body>
+    <div class="navbar-item has-dropdown is-hoverable">
+</div>
+    <nav class="navbar" role="navigation" aria-label="dropdown navigation">
+  <div class="navbar-item has-dropdown is-hoverable">
+  
+  <a class="navbar-link">
   <a href="{% url 'homepage' %}">M & M</a>
+  </a>
+  
+  <a class="navbar-link">
   <a href="{% url 'self_care' %}">Self Care</a>
+  </a>
+  
+  <a class="navbar-link">
   <a href="{% url 'resources' %}">Resources</a>
+  </a>
+  
+  <a class="navbar-link">
 <a href="{% url 'health' %}">Health</a>
-<a href="{% url 'adventrues' %}">Adventures</a>
+</a>
+
+<a class="navbar-link">
+<a href="{% url 'adventures' %}">Adventures</a>
+</a>
   
   <h1>Opportunites</h1>
   </body>
