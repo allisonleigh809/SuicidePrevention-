@@ -34,7 +34,7 @@ path('accounts/', include('registration.backends.simple.urls')),
 
     path('moods/homepage/',suicideprevent_views.homepage, name='homepage'),
 
-    path('moods/self-care/',suicideprevent_views.self_care, name='self_care'),
+    path('moods/self_care/',suicideprevent_views.self_care, name='self_care'),
     # put in profile and mood tracker in url
    
    path('moods/health/',suicideprevent_views.health, name='health'),
