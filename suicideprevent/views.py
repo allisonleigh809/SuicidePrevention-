@@ -50,11 +50,14 @@ def mood_tracker(request):
     return render(request, "moods/list_moods.html",
 )
 
+def homepage(request):
+      return render(request, "moods/homepage.html")
+
 def self_care(request):
       return render(request, "moods/self_care.html")
 
-def course(request):
-      return render(request, "moods/course.html")
+def resources(request):
+      return render(request, "moods/resources.html")
 
 def health(request):
       return render(request, "moods/health.html")

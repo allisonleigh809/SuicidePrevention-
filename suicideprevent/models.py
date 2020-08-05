@@ -20,14 +20,13 @@ class Mood(models.Model):
     
     self_care = models.CharField(max_length=255, null=True, blank=True)
 
-    city = models.CharField(max_length=255, default='0000000', editable=False)
-    location = PlainLocationField(based_fields=['city'], zoom=7, default='0000000', editable=False)
     
     resources = models.CharField(max_length=255, null=True, blank=True)
     
     emergency_contact = models.CharField(max_length=255, null=True, blank=True)
     
-    
+    city = models.CharField(max_length=255, default='0000000', editable=False)
+    location = PlainLocationField(based_fields=['city'], zoom=7)
 
     def __str__(self):
          return f"{self.mood_tracker}"

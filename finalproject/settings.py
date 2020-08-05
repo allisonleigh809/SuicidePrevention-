@@ -137,3 +137,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOCATION_FIELD = {
+'provider.google.api': '//maps.google.com/maps/api/js?sensor=false',
+'provider.google.api_key': '<AIzaSyBX2XkRZvrc19T36sCWeoJ-MtIYIeDSOA8>',
+'provider.google.api_libraries': '',
+'provider.google.map.type': 'ROADMAP',
+'provider.google.api': '//maps.google.com/maps/api/js?sensor=false',
+'provider.google.api_key': '',
+'provider.google.api_libraries': '',
+'provider.google.map.type': 'ROADMAP',
+}
