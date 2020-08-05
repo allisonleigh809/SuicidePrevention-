@@ -64,4 +64,5 @@ def opportunites(request):
 
 def adventures(request):
       return render(request, "moods/adventures.html")
-      
+
+

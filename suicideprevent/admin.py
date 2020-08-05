@@ -3,3 +3,4 @@ from .models import Mood
 
 # Register your models here.
 admin.site.register(Mood)
+
