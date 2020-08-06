@@ -1,16 +1,29 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>M&M!</title>
+	{% block title %}<title>M&M!</title>{% endblock %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  <script src="{% static 'js/utils.js' %}"></script>
+  <style>
+		canvas {
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+		}
+	</style>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
 	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js">
   
 	</script>
 </head>
+<body>
+{% block content %}{% endblock %}
+</body>
+</html>
+<!-- <body>
 <section class="hero is-info is-medium">
 	<div class="hero-head">
 		<nav class="navbar">
@@ -32,7 +45,7 @@
               <i class="fa fa-home"></i>
               Home
             </a>
-            <a class="navbar-item">Profile
+            <a class="navbar-item">Profile -->
             
             <!-- </a>
             <a class="navbar-item">
@@ -45,7 +58,7 @@
             </span>
                 <span>Download</span> -->
                 
-              </a>
+              <!-- </a>
             </span>
           </div>
         </div>
@@ -91,7 +104,7 @@
     </nav>
   </div>
 </section>
-  <body>
+    
   <section class="section">
     <div class="tile is-ancestor">
   <div class="tile is-vertical is-8">
@@ -137,10 +150,10 @@
 <i class="far fa-meh"></i>
 </ul>
 </span>
-</label>
+</label> -->
 
             <!-- <img src="https://cdn2.vectorstock.com/i/thumb-large/20/96/african-american-woman-face-profile-beauty-sign-vector-1352096.jpg"> -->
-          </figure>
+          <!-- </figure>
         </article>
       </div>
     </div>
@@ -149,9 +162,9 @@
         <button class="button is-warning is-hovered"
         <a href="{% url 'resources' %}"<p class="title">Reach Out Resources</p></button>
         <p class="subtitle">List of Resources and Contacts</p>
-        <div class="content">
+        <div class="content"> -->
           <!-- Content -->
-        </div>
+        <!-- </div>
       </article>
     </div>
   </div>
@@ -160,13 +173,13 @@
       <div class="content">
         <p class="title">Motivation!</p>
         <p class="subtitle">With even more content</p>
-        <div class="content">
+        <div class="content"> -->
           <!-- Content -->
-        </div>
+        <!-- </div>
       </div>
     </article>
   </div>
 </div>
   </section>
-  </body>
-</html>
+  <!-- </body>
+

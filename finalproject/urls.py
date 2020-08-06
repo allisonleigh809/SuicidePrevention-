@@ -24,8 +24,8 @@ urlpatterns = [
 path('accounts/', include('registration.backends.simple.urls')),
     path('admin/', admin.site.urls),
     
-    path('', suicideprevent_views.mood_tracker,
-    name='mood_tracker'),
+    path('', suicideprevent_views.list_moods,
+    name='list_moods'),
     path('moods/add', suicideprevent_views.add_moods, name='add_moods'),
     
     path('moods/<int:pk>/delete/', suicideprevent_views.delete_moods, name='delete_moods'),
@@ -47,10 +47,7 @@ path('accounts/', include('registration.backends.simple.urls')),
 
    path('moods/progress_bar/',suicideprevent_views.progress_bar, name='progress_bar'),
 
-   path('moods/update_profile/',suicideprevent_views.update_profile, name='update_profile'),
-
-   
-
+  
 
 ]
 

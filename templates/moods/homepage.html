@@ -1,43 +1,162 @@
 {% extends 'base.html' %}
 
 {% block title %}Home{% endblock title %}
+  {% block content %}
+<section class="hero is-info is-medium">
+	<div class="hero-head">
+		<nav class="navbar">
+			<div class="container">
+				<div class="navbar-brand">
+					<a class="navbar-item">
+						<img src="https://www.canva.com/design/DAEDkgCU4oU/JkC6y8RbWifCBnt2XG3EWA/view?utm_content=DAEDkgCU4oU&utm_campaign=designshare&utm_medium=link&utm_source=viewer"="Logo">
+          </a>
+          <span class="navbar-burger burger" data-target="navbarMenuHeroB">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        
+        <div id="navbarMenuHeroB" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item is-active">
+              <i class="fa fa-home"></i>
+              Home
+            </a>
+            <a class="navbar-item">Profile
+            
+            <!-- </a>
+            <a class="navbar-item">
+              Documentation
+            </a> -->
+            <!-- <span class="navbar-item">
+              <a class="button is-info is-inverted">
+                <span class="icon">
+                <i class="fas fa-home"></i>
+            </span>
+                <span>Download</span> -->
+                
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
 
-{% block content %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>M & M</title> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-  </head>
-  <div class="navbar-item has-dropdown is-hoverable">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <p class="title">
+        Moods and Motivation
+      </p>
+      <p class="subtitle">
+        You Matter!
+      </p>
+    </div>
+  </div>
+
+  <div class="hero-foot">
+    <nav class="tabs is-boxed is-fullwidth">
+      <div class="container">
+        <ul>
+          <li class="is-active">
+            <nav><a href="{% url 'homepage' %}">M & M</a>
+          </li>
+          <li>
+           <nav><a href="{% url 'self_care' %}">Self Care </a></nav>
+          </li>
+          <li>
+            <nav><a href="{% url 'resources' %}">Resources</a></nav>
+          </li>
+          <li>
+            <nav><a href="{% url 'health' %}">Health</a></nav>
+          </li>
+          <li>
+            <nav><a href="{% url 'opportunites' %}">Opportunites</a></nav>
+          </li>
+          <li>
+            <nav><a href="{% url 'adventures' %}">Adventures</a></nav>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</section>
+    
+  <section class="section">
+    <div class="tile is-ancestor">
+  <div class="tile is-vertical is-8">
+    <div class="tile">
+      <div class="tile is-parent is-vertical">
+        <article class="tile is-child notification is-primary">
+          <p class="title">My Week!</p>
+          <p class="subtitle">Top tile</p>
+        </article>
+        <article class="tile is-child notification is-warning">
+          <p class="title">Joy Points:</p>
+          <p class="subtitle">Bottom tile</p>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-info">
+          <p class="title">Moods</p>
+          <p class="subtitle">Modd Tracker</p>
+          <nav><a href="{% url 'progress_bar' %}">Progress Bar</a></nav>
+          <figure class="M & M">
+            <label class="checkbox">
+  <ul>
+  <input type="checkbox">
+<span class="icon">
+<i class="far fa-smile"></i>
+</ul>
+
+<ul>
+  <input type="checkbox">
+<span class="icon">
+<i class="far fa-frown"></i>
+</ul>
+
+<ul>
+<input type="checkbox">
+<span class="icon">
+<i class="far fa-meh"></i>
+</ul>
+
+<ul>
+<input type="checkbox">
+<span class="icon">
+<i class="far fa-meh"></i>
+</ul>
+</span>
+</label>
+
+            <!-- <img src="https://cdn2.vectorstock.com/i/thumb-large/20/96/african-american-woman-face-profile-beauty-sign-vector-1352096.jpg"> -->
+          </figure>
+        </article>
+      </div>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child notification is-danger">
+        <button class="button is-warning is-hovered"
+        <a href="{% url 'resources' %}"<p class="title">Reach Out Resources</p></button>
+        <p class="subtitle">List of Resources and Contacts</p>
+        <div class="content">
+          <!-- Content -->
+        </div>
+      </article>
+    </div>
+  </div>
+  <div class="tile is-parent">
+    <article class="tile is-child notification is-success">
+      <div class="content">
+        <p class="title">Motivation!</p>
+        <p class="subtitle">With even more content</p>
+        <div class="content">
+          <!-- Content -->
+        </div>
+      </div>
+    </article>
+  </div>
 </div>
-    <nav class="navbar" role="navigation" aria-label="dropdown navigation">
-  <div class="navbar-item has-dropdown is-hoverable">
-
-    <a class="navbar-link">
-  <a href="{% url 'homepage' %}">M & M</a>
-  </a>
-
-  <a class="navbar-link">
-  <a href="{% url 'self_care' %}">Self Care</a>
-  </a>
-
-  <a class="navbar-link">
-  <a href="{% url 'resources' %}">Resources</a>
-  </a>
-
-  <a class="navbar-link">
-<a href="{% url 'health' %}">Health</a>
-</a>
-
-<a class="navbar-link">
-<a href="{% url 'opportunites' %}">Opportunites</a>
-</a>
-
-<a class="navbar-link">
-<a href="{% url 'adventures' %}">Adventures</a>
-</a>
-  <h1>M & M</h1>
-{% endblock content %}
+  </section>
+  {% endblock %}

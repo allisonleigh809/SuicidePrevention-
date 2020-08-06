@@ -46,10 +46,6 @@ def edit_moods(request, pk):
         "mood": mood
     })
 
-def mood_tracker(request):
-    return render(request, "moods/list_moods.html",
-)
-
 def homepage(request):
       return render(request, "moods/homepage.html")
 
