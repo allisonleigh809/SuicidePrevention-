@@ -47,6 +47,7 @@ path('accounts/', include('registration.backends.simple.urls')),
 
    path('moods/progress_bar/',suicideprevent_views.progress_bar, name='progress_bar'),
 
+   path('moods/profile/',suicideprevent_views.profile, name='profile'),
 
 
 ]

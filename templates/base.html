@@ -6,9 +6,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>M&M!</title>
-  <script src="path/to/chartjs/dist/Chart.js"></script>
-  <script src="../../../dist/2.9.3/Chart.min.js"></script>
-	<script src="../utils.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
 	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js">
   
@@ -35,8 +32,8 @@
               <i class="fa fa-home"></i>
               Home
             </a>
-            <a class="navbar-item">
-              Profile
+            <a class="navbar-item"><nav><a href="{% url 'profile' %}">Profile</a></nav>
+            
             <!-- </a>
             <a class="navbar-item">
               Documentation
@@ -112,7 +109,8 @@
       <div class="tile is-parent">
         <article class="tile is-child notification is-info">
           <p class="title">Moods</p>
-          <p class="subtitle">Modd Tracker</p><nav><a href="{% url 'progress_bar' %}">Progress Bar</a></nav>
+          <p class="subtitle">Modd Tracker</p>
+          <nav><a href="{% url 'progress_bar' %}">Progress Bar</a></nav>
           <figure class="M & M">
             <label class="checkbox">
   <ul>
@@ -122,12 +120,25 @@
 </ul>
 
 <ul>
+  <input type="checkbox">
+<span class="icon">
+<i class="far fa-frown"></i>
+</ul>
+
+<ul>
+<input type="checkbox">
+<span class="icon">
+<i class="far fa-meh"></i>
+</ul>
+
+<ul>
 <input type="checkbox">
 <span class="icon">
 <i class="far fa-meh"></i>
 </ul>
 </span>
 </label>
+
             <!-- <img src="https://cdn2.vectorstock.com/i/thumb-large/20/96/african-american-woman-face-profile-beauty-sign-vector-1352096.jpg"> -->
           </figure>
         </article>
