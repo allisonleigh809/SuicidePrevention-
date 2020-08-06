@@ -3,7 +3,7 @@
 <head>
 {% block title %}<title> Animation Callbacks </title>{% endblock %}
 </head>
-
+{% block content %}
 <body>
 	<div style="width: 75%;">
 		<canvas id="canvas"></canvas>
@@ -82,6 +82,4 @@
 			window.myLine.update();
 		});
 	</script>
-</body>
-
-</html>
+{% endblock %}

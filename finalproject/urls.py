@@ -24,15 +24,16 @@ urlpatterns = [
 path('accounts/', include('registration.backends.simple.urls')),
     path('admin/', admin.site.urls),
     
-    path('', suicideprevent_views.list_moods,
-    name='list_moods'),
+    path('', suicideprevent_views.homepage,
+    name='homepage'),
+    
     path('moods/add', suicideprevent_views.add_moods, name='add_moods'),
     
     path('moods/<int:pk>/delete/', suicideprevent_views.delete_moods, name='delete_moods'),
     
     path('moods/<int:pk>/edit/',suicideprevent_views.edit_moods, name='edit_moods'),
 
-    path('moods/homepage/',suicideprevent_views.homepage, name='homepage'),
+    path('moods/list_moods/',suicideprevent_views.list_moods, name='list_moods'),
 
     path('moods/self_care/',suicideprevent_views.self_care, name='self_care'),
     # put in profile and mood tracker in url
