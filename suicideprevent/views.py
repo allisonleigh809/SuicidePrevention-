@@ -68,8 +68,6 @@ def opportunites(request):
 def adventures(request):
       return render(request, "moods/adventures.html")
 
-def profile(request):
-      return render(request, "moods/profile.html")
 
 def progress_bar(request):
       return render(request, "moods/progress_bar.html")

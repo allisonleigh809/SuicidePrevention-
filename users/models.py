@@ -1,5 +1,4 @@
 from django.db import models
-
 # Create your models here.
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
@@ -19,6 +18,11 @@ def create_user_profile(sender, instance, created, **kwargs):
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
+
+def update_profile(request, user_id):
+    user = User.objects.get(pk=user_id)
+    user.profile.bio = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit...'
+    user.save()
 
 class User(User):
     name = models.CharField(max_length=255, null=True, blank=True)
