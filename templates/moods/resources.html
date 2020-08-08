@@ -9,27 +9,16 @@
   <body>
   <div class="navbar-item has-dropdown is-hoverable">
 </div>
-    <nav class="navbar" role="navigation" aria-label="dropdown navigation">
-  <div class="navbar-item has-dropdown is-hoverable">
-    
-    <a class="navbar-link">
-      <a href="{% url 'homepage' %}">M & M</a>
-      </a>
-  <a class="navbar-link">
-    <a href="{% url 'self_care' %}">Self Care</a>
-    </a>
-    
-    <a class="navbar-link">
-<a href="{% url 'health' %}">Health</a>
-</a>
-
-<a class="navbar-link">
-<a href="{% url 'opportunites' %}">Opportunites</a>
-</a>
-
-<a class="navbar-link">
-<a href="{% url 'adventures' %}">Adventures</a>
-</a>
+    <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="{% url 'homepage' %}">M & M</a></li>
+    <li><a href="{% url 'self_care' %}">Self Care</a></li>
+    <li><a href="{% url 'health' %}">Health</a></li>
+    <li><a href="{% url 'opportunites' %}">Opportunites</a></li>
+    <li><a href="{% url 'adventures' %}">Adventures</a></li>
+    <li class="is-active"><a href="#" aria-current="page">Breadcrumb</a></li>
+  </ul>
+</nav>
 </body>
 
   <div class="tile is-parent">

@@ -10,42 +10,16 @@
   <body>
     <div class="navbar-item has-dropdown is-hoverable">
 </div>
-    <div class="tabs is-toggle is-toggle-rounded">
+    <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
   <ul>
-    <li class="is-active">
-      <a>
-        <nav><a href="{% url 'homepage' %}"><span class="icon is-small"><i class="fas fa-image"></i></span>
-        <span>M & M</span>
-      </a>
-    </li>
-    <li class="is-active">
-      <a>
-        <span class="icon is-small"><i class="fas fa-image"></i></span>
-        <span>Resources</span>
-      </a>
-    </li>
-    <li>
-      <a>
-        <span class="icon is-small"><i class="fas fa-music"></i></span>
-        <span>Health</span>
-      </a>
-    </li>
-    <li>
-      <a>
-        <span class="icon is-small"><i class="fas fa-film"></i></span>
-        <span>Opportunites</span>
-      </a>
-    </li>
-    <li>
-      <a>
-        <span class="icon is-small"><i class="fas fa-file-alt"></i></span>
-        <span>Adeventures</span>
-      </a>
-    </li>
+    <li><a href="{% url 'homepage' %}">M & M</a></li>
+    <li><a href="{% url 'resources' %}">Resources</a></li>
+    <li><a href="{% url 'health' %}">Health</a></li>
+    <li><a href="{% url 'opportunties' %}">Opportunites</a></li>
+    <li><a href="{% url 'adventures' %}">Adventures</a></li>
+    <li class="is-active"><a href="#" aria-current="page">Breadcrumb</a></li>
   </ul>
-</div>
-<!-- </ul> -->
-  <!-- </div> -->
+</nav>
   <h1>Self Care</h1>
   </body>
 
