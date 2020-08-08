@@ -11,7 +11,7 @@
 	</div>
 	<br>
 	<br>
-	<button id="randomizeData">Randomize Data</button>
+	<button id="randomizeData">Mood Chart</button>
 	<script>
 		var ctx = document.getElementById('myChart').getContext('2d');
 var chart = new Chart(ctx, {
@@ -22,10 +22,10 @@ var chart = new Chart(ctx, {
     data: {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [{
-            label: 'My First dataset',
+            label: 'Mood Chart',
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45]
+            data: [0, 10, 5, 2, 20, 30, 31]
         }]
     },
 
@@ -33,4 +33,16 @@ var chart = new Chart(ctx, {
     options: {}
 });
 	</script>
+  <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="{% url 'homepage' %}">M & M</a></li>
+    <li><a href="{% url 'self_care' %}">Self Care</a></li>
+    <li><a href="{% url 'resources' %}">Resources</a></li>
+    <li><a href="{% url 'health' %}">Health</a></li>
+    <li><a href="{% url 'opportunites' %}">Opportunites</a></li>
+    <li><a href="{% url 'adventures' %}">Adventures</a></li>
+
+    
+  </ul>
+</nav>
 {% endblock %}

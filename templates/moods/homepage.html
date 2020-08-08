@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Home{% endblock title %}
+{% block title %}{% endblock title %}
   {% block content %}
 <section class="hero is-info is-medium">
 	<div class="hero-head">
@@ -100,11 +100,33 @@
       <div class="tile is-parent">
         <article class="tile is-child notification is-info">
           <p class="title">Moods</p>
-          <p class="subtitle">Modd Tracker</p>
+          <p class="subtitle">Mood Tracker</p>
           <nav><a href="{% url 'progress_bar' %}">Progress Bar</a></nav>
           <figure class="M & M">
             <label class="checkbox">
-  <ul>
+              
+              
+              <p>smiling</p>
+              <input type="checkbox">
+              <p style="font-size:30px">&#128512;</p>
+
+              <input type="checkbox">
+              <p style="font-size:30px">&#128512;</p>
+
+              <p>smiling</p>
+              <input type="checkbox">
+              <p style="font-size:30px">&#128512;</p>
+              
+              <p>neutral</p>
+              <input type="checkbox">
+              <p style="font-size:30px">&#128529;</p>
+              
+
+              <p>expressionless</p>
+              <input type="checkbox">
+              <p style="font-size:30px">&#128530;</p>
+            
+  <!-- <ul>
   <input type="checkbox">
 <span class="icon">
 <i class="far fa-smile"></i>
@@ -125,10 +147,10 @@
 <ul>
 <input type="checkbox">
 <span class="icon">
-<i class="far fa-meh"></i>
+<i class="far fa-sa-tear"></i>
 </ul>
 </span>
-</label>
+</label> -->
 
             <!-- <img src="https://cdn2.vectorstock.com/i/thumb-large/20/96/african-american-woman-face-profile-beauty-sign-vector-1352096.jpg"> -->
           </figure>
