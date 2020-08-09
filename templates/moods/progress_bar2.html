@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+<html>
+<head>
+{% block title %}<title> Animation Callbacks </title>{% endblock %}
+</head>
+{% block content %}
+<body>
+	<div style="width: 75%;">
+		<canvas id="myChart"></canvas>
+		<progress id="animationProgress" max="1" value="0" style="width: 100%"></progress>
+	</div>
+	<br>
+	<br>
+	<button id="randomizeData">Sleep Chart</button>
+	<script>
+		var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+            label: 'Sleep Chart',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 10, 5, 2, 20, 30, 31]
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+	</script>
+  <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="{% url 'homepage' %}">M & M</a></li>
+    <li><a href="{% url 'self_care' %}">Self Care</a></li>
+    <li><a href="{% url 'resources' %}">Resources</a></li>
+    <li><a href="{% url 'health' %}">Health</a></li>
+    <li><a href="{% url 'opportunites' %}">Opportunites</a></li>
+    <li><a href="{% url 'adventures' %}">Adventures</a></li>
+
+    
+  </ul>
+</nav>
+{% endblock %}
