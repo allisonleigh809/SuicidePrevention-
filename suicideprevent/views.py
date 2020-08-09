@@ -68,3 +68,9 @@ def adventures(request):
 def progress_bar(request):
       return render(request, "moods/progress_bar.html")
 
+def progress_bar2(request):
+      return render(request, "moods/progress_bar2.html")
+
+def calendar(request):
+      return render(request, "moods/calendar.html")
+
