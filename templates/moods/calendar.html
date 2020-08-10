@@ -1,21 +1,49 @@
-div#main.container
-  div.jumbotron
-    h1.text-center
-      a#left(href="#")
-        i.fa.fa-chevron-left 
+<div class="container">
+	<h2>2020 Mood Calendar</h2>
+	<p>Select mood:</p>
+	<div class="moods_container">
+    <!-- <p>smiling</p>
+              <input type="checkbox">
+              <p style="font-size:30px">&#128512;</p>
+              <hr>
+              <p>crying</p>
+              <input type="checkbox">
+              <p style="font-size:30px">&#128554;</p>
+              <hr>
+              <p>annoyed</p>
+              <input type="checkbox">
+              <p style="font-size:30px">&#128580;</p>
+              <hr>
+              <p>neutral</p>
+              <input type="checkbox">
+              <p style="font-size:30px">&#128529;</p>
+              <hr>
+              <p>expressionless</p>
+              <input type="checkbox">
+              <p style="font-size:30px">&#128530;</p> -->
 
-      span &nbsp;
-      span#month 
-      span &nbsp;
-      span#year 
-      span &nbsp;
-      a#right(href="#")
-        i.fa.fa-chevron-right 
-
-  div.row
-    div.col-sm-10.col-sm-offset-1
-      table.table
-
-span#about
-  a(href="https://odran037.github.io" target="_blank")
-    i.fa.fa-question-circle 
+		<button class="mood mood_1" id="mood_1">
+			<p style="font-size:30px">&#128512;</p>
+		</button>
+		<button class="mood mood_2" id="mood_2">
+			<p style="font-size:30px">&#128554;</p>
+		</button>
+		<button class="mood mood_3" id="mood_3">
+			<p style="font-size:30px">&#128580;</p>
+		</button>
+		<button class="mood mood_4" id="mood_4">
+			<p style="font-size:30px">&#128529;</p>
+		</button>
+		<button class="mood mood_5" id="mood_5">
+			<p style="font-size:30px">&#128530;</p>
+		</button>
+	</div>
+	<p>then click on the circles below</p>
+	<button id="randomize" class="action_btn randomize">
+		<i class="fas fa-random"></i>
+	</button>
+	<button id="clear" class="action_btn clear">
+		<i class="fas fa-sync"></i>
+	</button>
+	<div id="calendar" class="calendar"></div>
+</div>

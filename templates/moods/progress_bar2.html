@@ -6,14 +6,18 @@
 {% block content %}
 <body>
 	<div style="width: 75%;">
+
 		<canvas id="mySleep"></canvas>
+
 		<progress id="animationProgress" max="1" value="0" style="width: 100%"></progress>
 	</div>
 	<br>
 	<br>
 	<button id="randomizeData">Sleep Chart</button>
 	<script>
+
 		var ctx = document.getElementById('mySleep').getContext('2d');
+
 var chart = new Chart(ctx, {
     // The type of chart we want to create
     type: 'line',
