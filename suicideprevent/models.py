@@ -6,6 +6,7 @@ class Mood(models.Model):
   smile_emoji = models.CharField(max_length=255, null=True, blank=True)
   name = models.CharField(max_length=255, null=True, blank=True)
   
+  
   def __str__(self):
     return f"{self.name}"
 

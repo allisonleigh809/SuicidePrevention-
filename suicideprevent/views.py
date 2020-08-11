@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .models import Mood 
+from .models import Sleep
 from .forms import moodsForm
+from .forms import sleepsForm
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db import models
@@ -47,7 +49,10 @@ def edit_moods(request, pk):
     })
 
 def homepage(request):
-      return render(request, "moods/homepage.html")
+    moods = Mood.objects.all()
+    sleeps = Sleep.objects.all()
+    return render(request, "moods/homepage.html", 
+    {"moods": moods, "sleeps": sleeps}) 
 
 def self_care(request):
       return render(request, "moods/self_care.html")
