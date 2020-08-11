@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 # Create your views here.
 def list_moods(request):
   moods = Mood.objects.all()
-  return render(request, "moods/list_moods.html",                        {"moods": moods})
+  return render(request, "moods/list_moods.html", {"moods": moods})
   
 def add_moods(request):
     if request.method == 'GET':

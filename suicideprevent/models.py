@@ -1,35 +1,38 @@
 from django.db import models
-from location_field.models.plain import PlainLocationField
 
 
 # Create your models here.
 class Mood(models.Model):
-    profile_face = models.ImageField(upload_to = 'pic_folder/', default = 'pic_folder/None/no-img.jpg')
-    
-    mood_tracker = models.CharField(max_length=255, null=True, blank=True)
-    date_mood = models.DateField(null=True, blank=True)
-    
-    
-    
-    sleep_tracker= models.CharField(max_length=255, null=True, blank=True)
-    date_sleep = models.DateField(null=True, blank=True)
-    
-    affirmations = models.CharField(max_length=255, null=True, blank=True)
-    
-    notification_alerts = models.CharField(max_length=255, null=True, blank=True)
-    
-    self_care = models.CharField(max_length=255, null=True, blank=True)
+  smile_emoji = models.CharField(max_length=255, null=True, blank=True)
+  name = models.CharField(max_length=255, null=True, blank=True)
+  
+  def __str__(self):
+    return f"{self.name}"
 
-    
-    resources = models.CharField(max_length=255, null=True, blank=True)
-    
-    emergency_contact = models.CharField(max_length=255, null=True, blank=True)
-    
-    city = models.CharField(max_length=255, default='0000000', editable=False)
-    location = PlainLocationField(based_fields=['city'], zoom=7)
+class MoodTracker(models.Model):
+    profile_face = models.ImageField(upload_to = 'pic_folder/', default = 'pic_folder/None/no-img.jpg')
+    mood = models.ForeignKey('Mood', on_delete = models.CASCADE)
+    date_added = models.DateField(null=True, blank=True, auto_now_add=True)  
 
     def __str__(self):
-         return f"{self.mood_tracker}"
+         return f"{self.mood}"
+
+class Sleep(models.Model):
+  smile_emoji = models.CharField(max_length=255, null=True, blank=True)
+  name = models.CharField(max_length=255, null=True, blank=True)
+  
+  def __str__(self):
+    return f"{self.smile_emoji}"
+
+class SleepTracker(models.Model):
+    profile_face = models.ImageField(upload_to = 'pic_folder/', default = 'pic_folder/None/no-img.jpg')
+    sleep = models.ForeignKey('Sleep', on_delete = models.CASCADE)
+    date_added = models.DateField(null=True, blank=True, auto_now_add=True)  
+
+    def __str__(self):
+         return f"{self.sleep}"
+              
+
               
 # class Place(models.Model):
 #     city = models.CharField(max_length=255)

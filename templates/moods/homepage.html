@@ -99,9 +99,16 @@
             <label class="checkbox">
               
               
+              {% for sleep in sleeps %}
+              <p>{{sleep.name}}</p>
+              <input type="checkbox">
+              <p style="font-size:30px">{{mood.smile_emoji}}</p>
+              {% endfor %}
+              <!-- enter each sleep as a Sleep object in the database and the code will loop over them -->
+              <!-- From here, you can use the info in the checkboxes to create SleepTracker objects with JavaScript -->
               <p>Sleepy</p>
               <input type="checkbox">
-              <p style="font-size:30px">&#128564;</p>
+              <p style="font-size:30px">&#128554;</p>
               <hr>
               <p>Tired</p>
               <input type="checkbox">
@@ -127,14 +134,19 @@
           <figure class="M & M">
             <label class="checkbox">
               
-              
+               {% for mood in moods %}
+              <p>{{mood.name}}</p>
+              <input type="checkbox">
+              <p style="font-size:30px">{{mood.smile_emoji}}</p>
+              {% endfor %} 
+              <!-- Same thing here that we did with sleep -->
               <p>smiling</p>
               <input type="checkbox">
               <p style="font-size:30px">&#128512;</p>
               <hr>
               <p>crying</p>
               <input type="checkbox">
-              <p style="font-size:30px">&#128554;</p>
+              <p style="font-size:30px">&#128546;</p>
               <hr>
               <p>annoyed</p>
               <input type="checkbox">
@@ -142,9 +154,13 @@
               <hr>
               <p>neutral</p>
               <input type="checkbox">
-              <p style="font-size:30px">&#128529;</p>
+              <p style="font-size:30px">&#128528;</p>
               <hr>
               <p>expressionless</p>
+              <input type="checkbox">
+              <p style="font-size:30px">&#128529;</p>
+              <hr>
+              <p>unamused</p>
               <input type="checkbox">
               <p style="font-size:30px">&#128530;</p>
             

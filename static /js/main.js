@@ -1,150 +1,73 @@
-const currentYear = 2019;
-const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-const months = [
-	"January",
-	"February",
-	"March",
-	"April",
-	"May",
-	"June",
-	"July",
-	"August",
-	"September",
-	"Octomber",
-	"November",
-	"December"
-];
-const colors = ["#2d6b5f", "#72e3a6", "#dff4c7", "#edbf98", "#ea3d36"];
-const defaultColor = "#888";
-let activeColor = "";
+const $ = document.querySelector.bind(document);
+const h = (tag) => document.createElement(tag);
 
-const calendar = document.getElementById("calendar");
-const moods = document.querySelectorAll(".mood");
-const randomize = document.querySelector("#randomize");
-const clear = document.querySelector("#clear");
-
-moods.forEach((mood) => {
-	mood.addEventListener("click", () => {
-		// if is already selected, deselect it
-		if (mood.classList.contains("selected")) {
-			mood.classList.remove("selected");
-			activeColor = defaultColor;
-		} else {
-			moods.forEach((mood) => {
-				mood.classList.remove("selected");
-			});
-
-			mood.classList.add("selected");
-			activeColor = getComputedStyle(mood).getPropertyValue("color");
-		}
-	});
-});
-
-const getAllDays = (year) => {
-	// First day of the year - 1st January
-	const firstDay = new Date(`January 1 ${year}`);
-	// Last day of the year - 31th December - used to stop adding days to the array
-	const lastDay = new Date(`December 31 ${year}`);
-
-	// Add first day
-	const days = [firstDay];
-
-	// Used to keep track of the day
-	let lastDayInArray = firstDay;
-
-	// Loop while there are new days to be added in the current year
-	while (lastDayInArray.getTime() !== lastDay.getTime()) {
-		days.push(addDays(lastDayInArray, 1));
-		lastDayInArray = days[days.length - 1];
-	}
-
-	return days;
+const text_labels = {
+  en: ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"],
+  es: ["DOM", "LUN", "MAR", "MIE", "JUV", "VIE", "SAB"]
 };
 
-const dates = getAllDays(currentYear);
+// -- setup
 
-let monthsHTML = "";
+const labels = $("#calendar .labels");
+const dates = $("#calendar .dates");
 
-// Loop over the months and create a div for each month
-months.forEach((month, idx) => {
-	monthsHTML += `<div class="months month_${idx}">
-        <h3>${month}</h3>
-        <div class="week_days_container">
-            ${weekDays
-													.map((day) => `<div class="week_days">${day}</div>`)
-													.join("")}
-        </div>
-        <div class="days_container"></div>
-    </div>`;
+const lspan = Array.from({ length: 7 }, () => {
+  return labels.appendChild(h("span"));
 });
 
-calendar.innerHTML = monthsHTML;
-
-// Loop over each day and
-dates.forEach((date) => {
-	const month = date.getMonth();
-	const monthEl = document.querySelector(`.month_${month} .days_container`);
-
-	// create extra day slots if needed before day 1
-	if (date.getDate() === 1 && date.getDay() !== 0) {
-		for (let i = 0; i < date.getDay(); i++) {
-			const emptySpot = createEmptySpot();
-
-			monthEl.appendChild(emptySpot);
-		}
-	}
-
-	const dateEl = createDateEl(date);
-
-	monthEl.appendChild(dateEl);
+const dspan = Array.from({ length: 42 }, () => {
+  return dates.appendChild(h("span"));
 });
 
-// Add click event to all the .circles
-const circles = document.querySelectorAll(".circle");
-circles.forEach((circle) => {
-	circle.addEventListener("click", () => {
-		circle.style.backgroundColor = activeColor;
-	});
-});
+// -- state mgmt
 
-// Randomize functionality
-randomize.addEventListener("click", () => {
-	circles.forEach((circle) => {
-		circle.style.backgroundColor = getRandomColor();
-	});
-});
+const view = sublet(
+  {
+    lang: "en",
+    offset: 0,
+    year: 2019,
+    month: 5
+  },
+  update
+);
 
-// Clear functionality
-clear.addEventListener("click", () => {
-	circles.forEach((circle) => {
-		circle.style.backgroundColor = defaultColor;
-	});
-});
+function update(state) {
+  const offset = state.offset;
 
-function getRandomColor() {
-	return colors[Math.floor(Math.random() * 5)];
+  // apply day labels
+  const txts = text_labels[state.lang];
+  lspan.forEach((el, idx) => {
+    el.textContent = txts[(idx + offset) % 7];
+  });
+
+  // apply date labels (very naiive way, pt 1)
+  let i = 0,
+    j = 0,
+    date = new Date(state.year, state.month);
+  calendarize(date, offset).forEach((week) => {
+    for (j = 0; j < 7; j++) {
+      dspan[i++].textContent = week[j] > 0 ? week[j] : "";
+    }
+  });
+
+  // clear remaining (very naiive way, pt 2)
+  while (i < dspan.length) dspan[i++].textContent = "";
 }
 
-function createDateEl(date) {
-	const day = date.getDate();
-	const dateEl = document.createElement("div");
-	dateEl.classList.add("days");
-	dateEl.innerHTML = `<span class="circle">${day}</span>`;
+// -- inputs
 
-	return dateEl;
-}
+("#lang").onchange = (ev) => {
+  view.lang = ev.target.value;
+};
 
-function createEmptySpot() {
-	const emptyEl = document.createElement("div");
-	emptyEl.classList.add("days");
+("#offset").onchange = (ev) => {
+  view.offset = +ev.target.value;
+};
 
-	return emptyEl;
-}
+("#month").onchange = (ev) => {
+  view.month = ev.target.value;
+};
 
-// function from StackOverflow: https://stackoverflow.com/questions/563406/add-days-to-javascript-date
-function addDays(date, days) {
-	var result = new Date(date);
-	result.setDate(result.getDate() + days);
-	return result;
-}
-
+("#year").onchange = (ev) => {
+  view.year = ev.target.value;
+};

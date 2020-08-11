@@ -1,16 +1,12 @@
 from django import forms
-from .models import Mood
+from .models import MoodTracker
 
 
 class moodsForm(forms.ModelForm):
     class Meta:
-        model = Mood
+        model = MoodTracker
         fields = [
-            'mood_tracker',
-            'sleep_tracker',
-            'notification_alerts',
-            'emergency_contact',
-            'resources',    
+          'mood',
         ]
 
 
