@@ -81,5 +81,7 @@ def calendar(request):
 
       return render(request, "moods/calendar.html")
 
+def submit_button(request):
 
+      return render(request, "moods/submit_button.html")
 

@@ -102,7 +102,7 @@
               {% for sleep in sleeps %}
               <p>{{sleep.name}}</p>
               <input type="checkbox">
-              <p style="font-size:30px">{{mood.smile_emoji}}</p>
+              <p style="font-size:30px">{{sleep.smile_emoji}}</p>
               {% endfor %} 
               <!-- enter each sleep as a Sleep object in the database and the code will loop over them -->
               <!-- From here, you can use the info in the checkboxes to create SleepTracker objects with JavaScript -->
@@ -139,6 +139,7 @@
               <input type="checkbox">
               <p style="font-size:30px">{{mood.smile_emoji}}</p>
               {% endfor %} 
+              
               <!-- Same thing here that we did with sleep -->
                
               <!-- <p>smiling</p>
@@ -199,7 +200,7 @@
     <div class="tile is-parent">
       <article class="tile is-child notification is-danger">
         <button class="button is-warning is-hovered"
-        <a href="{% url 'resources' %}"<p class="title">Reach Out Resources</p></button>
+        <p class="title"><nav><a href="{% url 'resources' %}">Reach Out Resources</p></button></a>
         <p class="subtitle">List of Resources and Contacts</p>
         <div class="content">
           <!-- Content -->
@@ -210,7 +211,9 @@
   <div class="tile is-parent">
     <article class="tile is-child notification is-success">
       <div class="content">
-        <p class="title">Motivation!</p>
+        <a href="{% url 'self_care' %}">Self Care
+    <a href="{% url 'health' %}">Health
+        <p class="title">Motivation!</p></a></a>
         <p class="subtitle">With even more content</p>
         <div class="content">
           <!-- Content -->

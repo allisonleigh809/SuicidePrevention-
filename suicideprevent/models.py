@@ -5,7 +5,8 @@ from django.db import models
 class Mood(models.Model):
   smile_emoji = models.CharField(max_length=255, null=True, blank=True)
   name = models.CharField(max_length=255, null=True, blank=True)
-  
+  date_added = models.DateField(null=True, blank=True, auto_now_add=True) 
+
   
   def __str__(self):
     return f"{self.name}"
@@ -23,7 +24,7 @@ class Sleep(models.Model):
   name = models.CharField(max_length=255, null=True, blank=True)
   
   def __str__(self):
-    return f"{self.smile_emoji}"
+    return f"{self.name}"
 
 class SleepTracker(models.Model):
     profile_face = models.ImageField(upload_to = 'pic_folder/', default = 'pic_folder/None/no-img.jpg')

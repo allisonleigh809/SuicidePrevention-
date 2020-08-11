@@ -21,7 +21,8 @@ from django.urls import include, path
 from suicideprevent import views as suicideprevent_views
 
 urlpatterns = [
-path('accounts/', include('registration.backends.simple.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    
     path('admin/', admin.site.urls),
     
     path('', suicideprevent_views.homepage,
@@ -51,7 +52,7 @@ path('accounts/', include('registration.backends.simple.urls')),
     path('moods/progress_bar2/',suicideprevent_views.progress_bar2, name='progress_bar2'),
 
     path('moods/calendar/',suicideprevent_views.calendar, name='calendar'),
-  
+    path('moods/submit_button/',suicideprevent_views.submit_button, name='submit_button')
 
 ]
 
