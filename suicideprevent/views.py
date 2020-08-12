@@ -7,11 +7,11 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db import models
 from django.contrib.auth.models import User
-
+from .models import MoodTracker
 # Create your views here.
-def list_moods(request):
-  moods = Mood.objects.all()
-  return render(request, "moods/list_moods.html", {"moods": moods})
+def list_mood_trackers(request):
+    moods_trackers = MoodTracker.objects.filter(user=request.user)
+    return render(request, "moods/list_mood_trackers.html", {"moods_trackers": moods_trackers})
   
 def add_moods(request):
     if request.method == 'GET':
@@ -48,14 +48,17 @@ def edit_moods(request, pk):
         "mood": mood
     })
 
+
 def homepage(request):
     moods = Mood.objects.all()
     sleeps = Sleep.objects.all()
     return render(request, "moods/homepage.html", 
     {"moods": moods, "sleeps": sleeps}) 
 
-def mood_tracker(request):
-      pass
+def mood_tracker(request, pk):
+    mood = get_object_or_404(Mood, pk=pk)
+    mood_tracker = MoodTracker.objects.create(user=request.user, mood=mood)
+    return redirect(to="progress_bar")
 
 def self_care(request):
       return render(request, "moods/self_care.html")

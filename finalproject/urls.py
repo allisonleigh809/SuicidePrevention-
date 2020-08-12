@@ -38,7 +38,7 @@ urlpatterns = [
     
     path('moods/<int:pk>/edit/',suicideprevent_views.edit_moods, name='edit_moods'),
 
-    path('moods/list_moods/',suicideprevent_views.list_moods, name='list_moods'),
+    path('moods/list_mood_trackers/',suicideprevent_views.list_mood_trackers, name='list_mood_tracker'),
 
     path('moods/self_care/',suicideprevent_views.self_care, name='self_care'),
     # put in profile and mood tracker in url

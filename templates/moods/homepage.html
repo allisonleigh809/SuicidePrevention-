@@ -98,7 +98,7 @@
           <figure class="M & M">
             <label class="checkbox">
               
-              <id=form>
+              <form>
               {% for sleep in sleeps %}
               <p>{{sleep.name}}</p>
               <input type="checkbox">
@@ -136,11 +136,14 @@
           <nav><a href="{% url 'progress_bar' %}"><p class="subtitle">Mood Tracker</p></a></nav>
           <figure class="M & M">
             <label class="checkbox">
-              <id=form>
+              <form id='mood_tracker' method='POST'>
+              {% csrf_token %}
                {% for mood in moods %}
+               <div id="{{mood.pk}}">
               <p>{{mood.name}}</p>
               <input type="checkbox">
               <p style="font-size:30px">{{mood.smile_emoji}}</p>
+              </div>
               <hr>
               {% endfor %} 
               <button class="button is-success is-rounded">Submit</button>
