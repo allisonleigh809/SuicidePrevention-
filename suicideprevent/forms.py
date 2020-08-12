@@ -8,6 +8,7 @@ class moodsForm(forms.ModelForm):
         fields = [
           'mood',
           
+          
         ]
 
 class sleepsForm(forms.ModelForm):

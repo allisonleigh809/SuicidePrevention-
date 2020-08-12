@@ -32,7 +32,7 @@ SECRET_KEY = 'tv0p!@=nn1p_jpqxn5$fly^x6ha%jz#$liav4yw^vvk-*djf$b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['suicideprevention.allisonleigh808.repl.co', 'suicideprevention--allisonleigh808.repl.co', '10.128.0.243']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -148,3 +148,5 @@ LOCATION_FIELD = {
 'provider.google.api_libraries': '',
 'provider.google.map.type': 'ROADMAP',
 }
+
+LOGIN_REDIRECT_URL = '/'

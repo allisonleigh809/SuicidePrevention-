@@ -98,12 +98,15 @@
           <figure class="M & M">
             <label class="checkbox">
               
-              
+              <id=form>
               {% for sleep in sleeps %}
               <p>{{sleep.name}}</p>
               <input type="checkbox">
               <p style="font-size:30px">{{sleep.smile_emoji}}</p>
+              <hr>
               {% endfor %} 
+              <button class="button is-success is-rounded">Submit</button>
+              </form>
               <!-- enter each sleep as a Sleep object in the database and the code will loop over them -->
               <!-- From here, you can use the info in the checkboxes to create SleepTracker objects with JavaScript -->
               <!-- <p>Sleepy</p>
@@ -130,16 +133,18 @@
       <div class="tile is-parent">
         <article class="tile is-child notification is-info">
           <p class="title">Moods</p>
-          <nav><a href="{% url 'progress_bar' %}"><p class="subtitle">Mood Tracker</p></nav>
+          <nav><a href="{% url 'progress_bar' %}"><p class="subtitle">Mood Tracker</p></a></nav>
           <figure class="M & M">
             <label class="checkbox">
-              
+              <id=form>
                {% for mood in moods %}
               <p>{{mood.name}}</p>
               <input type="checkbox">
               <p style="font-size:30px">{{mood.smile_emoji}}</p>
+              <hr>
               {% endfor %} 
-              
+              <button class="button is-success is-rounded">Submit</button>
+              </form>
               <!-- Same thing here that we did with sleep -->
                
               <!-- <p>smiling</p>

@@ -17,17 +17,21 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.urls import include, path
-
+from django.contrib.auth.views import LoginView, LogoutView
 from suicideprevent import views as suicideprevent_views
 
+
 urlpatterns = [
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('login/', LoginView.as_view(template_name="registration/login.html"), name='login'),
+    path('logout/', LogoutView.as_view(template_name="registration/login.html"), name='logout'),
     
     path('admin/', admin.site.urls),
     
     path('', suicideprevent_views.homepage,
     name='homepage'),
     
+    path('moods/mood_tracker', suicideprevent_views.mood_tracker, name='tracker'),
+
     path('moods/add', suicideprevent_views.add_moods, name='add_moods'),
     
     path('moods/<int:pk>/delete/', suicideprevent_views.delete_moods, name='delete_moods'),

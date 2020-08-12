@@ -54,6 +54,9 @@ def homepage(request):
     return render(request, "moods/homepage.html", 
     {"moods": moods, "sleeps": sleeps}) 
 
+def mood_tracker(request):
+      pass
+
 def self_care(request):
       return render(request, "moods/self_care.html")
 
