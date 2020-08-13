@@ -9,6 +9,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 input[type="range"]{
 width: 90vw;
@@ -17,7 +18,17 @@ height: 6px;
 background-color: white;
 border-radius: 6px;
 outline: none;
+margin-top: 60px;
 }
 input[type="range"]::-webkit-slider-thumb{
   -webkit-appearance: none;
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 10px 15px 10px rgba(0,0,0,0.2); 
+}
+.material-icons{
+  font-size: 130px;
+  color: #3fcad8
 }

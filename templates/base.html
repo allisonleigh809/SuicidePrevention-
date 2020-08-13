@@ -9,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   </head>
   <section class="hero is-info is-medium">
@@ -106,8 +108,23 @@
           <p class="subtitle">M & M</p>
           <figure class="M & M">
             <div class="container">
-              <input type="range" min="0" max="4" value="2" id="slider" 
+              <span class="material-icons" id="emoji">
+              sentiment_satisfied
+              </span>
+              <input type="range" min="0" max="4" value="2" id="slider"> 
             </div>
+            <script>
+              var slider=document.getElementById("slider");
+              var emoji=document.getElementById("emoji");
+              var emoticons=["mood_bad", "sentiment_very_dissatisfied", "sentiment_satisfied", "sentiment_satisfied_alt", "sentiment_very_satisfied"
+              ];
+
+              slider.oninput="function"(){
+                  emoji.innerHTML=emoticons[
+                    slider.value
+                    ]; 
+              }
+            </script>
           </figure>
         </article>
       </div>
