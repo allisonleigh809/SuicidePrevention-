@@ -14,7 +14,7 @@ class Mood(models.Model):
 class MoodTracker(models.Model):
     profile_face = models.ImageField(upload_to = 'pic_folder/', default = 'pic_folder/None/no-img.jpg')
     mood = models.ForeignKey('Mood', on_delete=models.CASCADE)
-    date_added = models.DateField(null=True, blank=True, auto_now_add=True)  
+    date_added = models.DateField(null=True, blank=True)  
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     
     def __str__(self):
@@ -30,7 +30,8 @@ class Sleep(models.Model):
 class SleepTracker(models.Model):
     profile_face = models.ImageField(upload_to = 'pic_folder/', default = 'pic_folder/None/no-img.jpg')
     sleep = models.ForeignKey('Sleep', on_delete=models.CASCADE)
-    date_added = models.DateField(null=True, blank=True, auto_now_add=True)  
+    date_added = models.DateField(null=True, blank=True, auto_now_add=True) 
+     
 
     def __str__(self):
          return f"{self.sleep}"

@@ -8,6 +8,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.db import models
 from django.contrib.auth.models import User
 from .models import MoodTracker
+
+
 # Create your views here.
 def list_mood_trackers(request):
     moods_trackers = MoodTracker.objects.filter(user=request.user)
@@ -90,4 +92,6 @@ def calendar(request):
 def submit_button(request):
 
       return render(request, "moods/submit_button.html")
+
+
 

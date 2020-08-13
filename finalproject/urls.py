@@ -58,7 +58,9 @@ urlpatterns = [
     path('moods/calendar/',suicideprevent_views.calendar, name='calendar'),
     path('moods/submit_button/',suicideprevent_views.submit_button, name='submit_button')
 
+    
 ]
+
 
 
 if settings.DEBUG:
