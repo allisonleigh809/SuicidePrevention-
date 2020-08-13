@@ -1,0 +1,23 @@
+body{
+  background-color: #101749;
+  padding: 0;
+  margin: 0;
+}
+.container{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+input[type="range"]{
+width: 90vw;
+height: 6px;
+-webkit-appearance:none;
+background-color: white;
+border-radius: 6px;
+outline: none;
+}
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance: none;
+}
