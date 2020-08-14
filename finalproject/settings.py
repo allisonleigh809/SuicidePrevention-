@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+
 from pathlib import Path
 
 import environ
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'location_field.apps.DefaultConfig',
+    
     
 
     # Third-party
@@ -136,7 +138,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static/' 
+
+STATICFILES_DIRS = (
+  os.path.join(BASE_DIR, 'static/'),
+  '/finalproject/suicideprevent/static',
+)
 
 LOCATION_FIELD = {
 'provider.google.api': '//maps.google.com/maps/api/js?sensor=false',
