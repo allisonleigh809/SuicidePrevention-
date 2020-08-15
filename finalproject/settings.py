@@ -18,7 +18,7 @@ import environ
 
 env = environ.Env(
     # set casting, default value
-    DEBUG=(bool, False), )
+    DEBUG=(bool, ), )
 environ.Env.read_env()
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -140,10 +140,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/' 
 
-STATICFILES_DIRS = (
-  os.path.join(BASE_DIR, 'static/'),
-  '/finalproject/suicideprevent/static',
-)
+STATICFILES_DIRS = [
+  os.path.join(BASE_DIR, 'static'),
+]
 
 LOCATION_FIELD = {
 'provider.google.api': '//maps.google.com/maps/api/js?sensor=false',
