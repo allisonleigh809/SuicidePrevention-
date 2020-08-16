@@ -31,6 +31,8 @@ path('accounts/', include('registration.backends.simple.urls')),
     path('moods/<int:pk>/delete/', suicideprevent_views.delete_moods, name='delete_moods'),
     
     path('moods/<int:pk>/edit/',suicideprevent_views.edit_moods, name='edit_moods'),
+
+    path('moods/self-care<int:pk>/edit/',suicideprevent_views.self_care, name='self_care'),
 ]
 
 
