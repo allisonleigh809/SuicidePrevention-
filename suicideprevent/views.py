@@ -53,3 +53,7 @@ def mood_tracker(request):
 def self_care(request):
     return render(request, "moods/list_moods.html",
 )
+
+def resources(request):
+    return render(request, "moods/list_moods.html",
+)
