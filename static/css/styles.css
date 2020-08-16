@@ -1,34 +1,19 @@
-body{
-  background-color: #101749;
-  padding: 0;
-  margin: 0;
+.eapps-form-actions-button-loader-inner {
+    animation: eapps-form-loader-2 1.2s linear infinite;
 }
-.container{
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-input[type="range"]{
-width: 90vw;
-height: 6px;
--webkit-appearance:none;
-background-color: white;
-border-radius: 6px;
-outline: none;
-margin-top: 60px;
-}
-input[type="range"]::-webkit-slider-thumb{
-  -webkit-appearance: none;
-  height: 30px;
-  width: 30px;
-  background-color: white;
-  border-radius: 50%;
-  box-shadow: 10px 15px 10px rgba(0,0,0,0.2); 
-}
-.material-icons{
-  font-size: 130px;
-  color: #3fcad8
+
+.eapps-form-actions-button-loader-inner, .eapps-form-actions-button-loader-inner:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 50%;
+    content: "";
+    transform-origin: center center;
+    clip: rect(0, 28px, 28px, 14px);
 }
