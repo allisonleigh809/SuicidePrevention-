@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}{% endblock title %}
-  {% block content %}
+  {% block scripts %}
+  <script defer src="{% static 'js/main.js' %}"></script>
+  <script src="https://rawgit.com/theraot/emoji/master/emoji.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
+  {% endblock %}
+{% block content %}
 <section class="hero is-info is-medium">
 	<div class="hero-head">
 		<nav class="navbar">
@@ -59,7 +64,119 @@
 <div class="elfsight-app-3c53c8c0-0cd9-4487-a11b-6f02a24e1e37"></div>
 <script src="https://apps.elfsight.com/p/platform.js" defer></script>
 <div class="elfsight-app-e54ab9ee-3d35-4ff3-b2e7-5785621c171c"></div>
-    </div>
+    </div> 
+
+<div class="eapps-form-element-container" eapps-link="container"><div class="eapps-form-element-scale-smiles-options">
+    <label class="eapps-form-element-scale-smiles-options-item" for="how-would-you-rate-our-service-0-awful">
+        <input type="radio" name="how-would-you-rate-our-service-0" id="how-would-you-rate-our-service-0-awful" value="awful" class="">
+
+        {% comment %} <span class="eapps-form-element-scale-smiles-options-item-icon">
+            <svg class="eapps-form-element-scale-smiles-options-item-icon-not-active" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                <g fill-rule="evenodd">
+                    <path fill="#999999" fill-opacity=".4" fill-rule="nonzero" d="M16 0c8.836 0 16 7.164 16 16s-7.164 16-16 16S0 24.836 0 16 7.164 0 16 0z"></path>
+                    <path fill="#111111" fill-opacity=".5" fill-rule="nonzero" d="M12.522 14.609a2.09 2.09 0 0 0-2.087-2.087 2.09 2.09 0 0 0-2.087 2.087 2.09 2.09 0 0 0 2.087 2.087 2.09 2.09 0 0 0 2.087-2.087zm9.043-2.087a2.09 2.09 0 0 0-2.087 2.087 2.09 2.09 0 0 0 2.087 2.087 2.09 2.09 0 0 0 2.087-2.087 2.09 2.09 0 0 0-2.087-2.087zm-2.782-2.783c.105 0 .211-.024.31-.073l2.783-1.391a.696.696 0 0 0-.622-1.245L18.47 8.422a.696.696 0 0 0 .312 1.317zm-8.66-1.464l2.783 1.391a.697.697 0 0 0 .934-.312.696.696 0 0 0-.311-.933L10.746 7.03a.695.695 0 1 0-.622 1.245zM16 19.478a9.101 9.101 0 0 0-6.78 3.015.696.696 0 1 0 1.038.928A7.701 7.701 0 0 1 16 20.87c2.193 0 4.287.93 5.743 2.551a.695.695 0 1 0 1.035-.93A9.118 9.118 0 0 0 16 19.479z"></path>
+                </g>
+            </svg> {% endcomment %}
+
+            {% comment %} <svg class="eapps-form-element-scale-smiles-options-item-icon-active" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                <g fill-rule="evenodd">
+                    <path fill="#FF6B5B" d="M16 0c8.836 0 16 7.164 16 16s-7.164 16-16 16S0 24.836 0 16 7.164 0 16 0z"></path>
+                    <path fill="#111111" fill-opacity=".5" d="M12.522 14.609a2.09 2.09 0 0 0-2.087-2.087 2.09 2.09 0 0 0-2.087 2.087 2.09 2.09 0 0 0 2.087 2.087 2.09 2.09 0 0 0 2.087-2.087zm9.043-2.087a2.09 2.09 0 0 0-2.087 2.087 2.09 2.09 0 0 0 2.087 2.087 2.09 2.09 0 0 0 2.087-2.087 2.09 2.09 0 0 0-2.087-2.087zm-2.782-2.783c.105 0 .211-.024.31-.073l2.783-1.391a.696.696 0 0 0-.622-1.245L18.47 8.422a.696.696 0 0 0 .312 1.317zm-8.66-1.464l2.783 1.391a.697.697 0 0 0 .934-.312.696.696 0 0 0-.311-.933L10.746 7.03a.695.695 0 1 0-.622 1.245zM16 19.478a9.101 9.101 0 0 0-6.78 3.015.696.696 0 1 0 1.038.928A7.701 7.701 0 0 1 16 20.87c2.193 0 4.287.93 5.743 2.551a.695.695 0 1 0 1.035-.93A9.118 9.118 0 0 0 16 19.479z"></path>
+                </g>
+            </svg>
+        </span>
+    </label> {% endcomment %}
+
+    {% comment %} <label class="eapps-form-element-scale-smiles-options-item" for="how-would-you-rate-our-service-0-poor">
+        <input type="radio" name="how-would-you-rate-our-service-0" id="how-would-you-rate-our-service-0-poor" value="poor" class="">
+
+        <span class="eapps-form-element-scale-smiles-options-item-icon">
+            <svg class="eapps-form-element-scale-smiles-options-item-icon-not-active" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                <g fill-rule="evenodd">
+                    <path fill="#999999" fill-opacity=".4" fill-rule="nonzero" d="M16 0c8.836 0 16 7.164 16 16s-7.164 16-16 16S0 24.836 0 16 7.164 0 16 0z"></path>
+                    <path fill="#111111" fill-opacity=".5" fill-rule="nonzero" d="M12.522 13.217a2.09 2.09 0 0 0-2.087-2.087 2.09 2.09 0 0 0-2.087 2.087 2.09 2.09 0 0 0 2.087 2.087 2.09 2.09 0 0 0 2.087-2.087zm9.043-2.087a2.09 2.09 0 0 0-2.087 2.087 2.09 2.09 0 0 0 2.087 2.087 2.09 2.09 0 0 0 2.087-2.087 2.09 2.09 0 0 0-2.087-2.087zM16 19.478a9.118 9.118 0 0 0-6.778 3.014.695.695 0 1 0 1.035.93A7.725 7.725 0 0 1 16 20.87c2.2 0 4.293.929 5.743 2.55a.692.692 0 0 0 .982.055.696.696 0 0 0 .054-.982A9.097 9.097 0 0 0 16 19.478z"></path>
+                </g>
+            </svg> {% endcomment %}
+
+            <svg class="eapps-form-element-scale-smiles-options-item-icon-active" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                <g fill-rule="evenodd">
+                    <path fill="#FFB400" d="M16 0c8.836 0 16 7.164 16 16s-7.164 16-16 16S0 24.836 0 16 7.164 0 16 0z"></path>
+                    <path fill="#111111" fill-opacity=".5" fill-rule="nonzero" d="M12.522 13.217a2.09 2.09 0 0 0-2.087-2.087 2.09 2.09 0 0 0-2.087 2.087 2.09 2.09 0 0 0 2.087 2.087 2.09 2.09 0 0 0 2.087-2.087zm9.043-2.087a2.09 2.09 0 0 0-2.087 2.087 2.09 2.09 0 0 0 2.087 2.087 2.09 2.09 0 0 0 2.087-2.087 2.09 2.09 0 0 0-2.087-2.087zM16 19.478a9.118 9.118 0 0 0-6.778 3.014.695.695 0 1 0 1.035.93A7.725 7.725 0 0 1 16 20.87c2.2 0 4.293.929 5.743 2.55a.692.692 0 0 0 .982.055.696.696 0 0 0 .054-.982A9.097 9.097 0 0 0 16 19.478z"></path>
+                </g>
+            </svg>
+        </span>
+    </label>
+
+    {% comment %} <label class="eapps-form-element-scale-smiles-options-item" for="how-would-you-rate-our-service-0-ok">
+        <input type="radio" name="how-would-you-rate-our-service-0" id="how-would-you-rate-our-service-0-ok" value="ok" class="">
+
+        <span class="eapps-form-element-scale-smiles-options-item-icon">
+            <svg class="eapps-form-element-scale-smiles-options-item-icon-not-active" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                <g fill-rule="evenodd">
+                    <path fill="#999999" fill-opacity=".4" fill-rule="nonzero" d="M16 0c8.836 0 16 7.164 16 16s-7.164 16-16 16S0 24.836 0 16 7.164 0 16 0z"></path>
+                    <path fill="#111111" fill-opacity=".5" fill-rule="nonzero" d="M10.435 15.304a2.09 2.09 0 0 0 2.087-2.087 2.09 2.09 0 0 0-2.087-2.087 2.09 2.09 0 0 0-2.087 2.087 2.09 2.09 0 0 0 2.087 2.087zm11.13-4.174a2.09 2.09 0 0 0-2.087 2.087 2.09 2.09 0 0 0 2.087 2.087 2.09 2.09 0 0 0 2.087-2.087 2.09 2.09 0 0 0-2.087-2.087zm1.392 9.348H9.043a.696.696 0 0 0 0 1.392h13.914a.696.696 0 0 0 0-1.392z"></path>
+                </g>
+            </svg> {% endcomment %}
+
+            <svg class="eapps-form-element-scale-smiles-options-item-icon-active" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                <g fill-rule="evenodd">
+                    <path fill="#FFD900" d="M16 0c8.836 0 16 7.164 16 16s-7.164 16-16 16S0 24.836 0 16 7.164 0 16 0z"></path>
+                    <path fill="#111111" fill-opacity=".5" fill-rule="nonzero" d="M10.435 15.304a2.09 2.09 0 0 0 2.087-2.087 2.09 2.09 0 0 0-2.087-2.087 2.09 2.09 0 0 0-2.087 2.087 2.09 2.09 0 0 0 2.087 2.087zm11.13-4.174a2.09 2.09 0 0 0-2.087 2.087 2.09 2.09 0 0 0 2.087 2.087 2.09 2.09 0 0 0 2.087-2.087 2.09 2.09 0 0 0-2.087-2.087zm1.392 9.348H9.043a.696.696 0 0 0 0 1.392h13.914a.696.696 0 0 0 0-1.392z"></path>
+                </g>
+            </svg>
+        </span>
+    </label>
+
+    <label class="eapps-form-element-scale-smiles-options-item" for="how-would-you-rate-our-service-0-good">
+        <input type="radio" name="how-would-you-rate-our-service-0" id="how-would-you-rate-our-service-0-good" value="good" class="">
+
+        <span class="eapps-form-element-scale-smiles-options-item-icon">
+            <svg class="eapps-form-element-scale-smiles-options-item-icon-not-active" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                  <g>
+                      <path fill="#999999" fill-opacity=".4" d="M16 0c8.836 0 16 7.164 16 16s-7.164 16-16 16S0 24.836 0 16 7.164 0 16 0z"></path>
+                      <path fill="#111111" fill-opacity=".5" d="M12.522 13.217a2.09 2.09 0 0 0-2.087-2.087 2.09 2.09 0 0 0-2.087 2.087 2.09 2.09 0 0 0 2.087 2.087 2.09 2.09 0 0 0 2.087-2.087zm9.043-2.087a2.09 2.09 0 0 0-2.087 2.087 2.09 2.09 0 0 0 2.087 2.087 2.09 2.09 0 0 0 2.087-2.087 2.09 2.09 0 0 0-2.087-2.087zm.177 8.58A7.701 7.701 0 0 1 16 22.26a7.725 7.725 0 0 1-5.743-2.55.695.695 0 1 0-1.035.93A9.118 9.118 0 0 0 16 23.65c2.595 0 5.066-1.099 6.78-3.014a.696.696 0 1 0-1.038-.928z"></path>
+                  </g>
+            </svg>
+
+            <svg class="eapps-form-element-scale-smiles-options-item-icon-active" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                  <g>
+                      <path fill="#A3E327" d="M16 0c8.836 0 16 7.164 16 16s-7.164 16-16 16S0 24.836 0 16 7.164 0 16 0z"></path>
+                      <path fill="#111111" fill-opacity=".5" d="M12.522 13.217a2.09 2.09 0 0 0-2.087-2.087 2.09 2.09 0 0 0-2.087 2.087 2.09 2.09 0 0 0 2.087 2.087 2.09 2.09 0 0 0 2.087-2.087zm9.043-2.087a2.09 2.09 0 0 0-2.087 2.087 2.09 2.09 0 0 0 2.087 2.087 2.09 2.09 0 0 0 2.087-2.087 2.09 2.09 0 0 0-2.087-2.087zm.177 8.58A7.701 7.701 0 0 1 16 22.26a7.725 7.725 0 0 1-5.743-2.55.695.695 0 1 0-1.035.93A9.118 9.118 0 0 0 16 23.65c2.595 0 5.066-1.099 6.78-3.014a.696.696 0 1 0-1.038-.928z"></path>
+                  </g>
+            </svg>
+        </span>
+    </label>
+
+    {% comment %} <label class="eapps-form-element-scale-smiles-options-item" for="how-would-you-rate-our-service-0-awesome">
+        <input type="radio" name="how-would-you-rate-our-service-0" id="how-would-you-rate-our-service-0-awesome" value="awesome" class="">
+
+        <span class="eapps-form-element-scale-smiles-options-item-icon">
+            <svg class="eapps-form-element-scale-smiles-options-item-icon-not-active" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                <g fill-rule="evenodd">
+                    <path fill="#999999" fill-opacity=".4" fill-rule="nonzero" d="M16 0c8.836 0 16 7.164 16 16s-7.164 16-16 16S0 24.836 0 16 7.164 0 16 0z"></path>
+                    <path fill="#111111" fill-opacity=".5" fill-rule="nonzero" d="M21.565 13.913a2.09 2.09 0 0 0 2.087-2.087 2.09 2.09 0 0 0-2.087-2.087 2.09 2.09 0 0 0-2.087 2.087 2.09 2.09 0 0 0 2.087 2.087zm-11.13 0a2.09 2.09 0 0 0 2.087-2.087 2.09 2.09 0 0 0-2.087-2.087 2.09 2.09 0 0 0-2.087 2.087 2.09 2.09 0 0 0 2.087 2.087zM16 26.435c4.22 0 7.652-3.433 7.652-7.652a.695.695 0 0 0-.695-.696H9.043a.695.695 0 0 0-.695.696c0 4.219 3.433 7.652 7.652 7.652z"></path>
+                </g>
+            </svg>
+
+            <svg class="eapps-form-element-scale-smiles-options-item-icon-active" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                <g fill-rule="evenodd">
+                    <path fill="#A3E327" d="M16 0c8.836 0 16 7.164 16 16s-7.164 16-16 16S0 24.836 0 16 7.164 0 16 0z"></path>
+                    <path fill="#111111" fill-opacity=".5" fill-rule="nonzero" d="M21.565 13.913a2.09 2.09 0 0 0 2.087-2.087 2.09 2.09 0 0 0-2.087-2.087 2.09 2.09 0 0 0-2.087 2.087 2.09 2.09 0 0 0 2.087 2.087zm-11.13 0a2.09 2.09 0 0 0 2.087-2.087 2.09 2.09 0 0 0-2.087-2.087 2.09 2.09 0 0 0-2.087 2.087 2.09 2.09 0 0 0 2.087 2.087zM16 26.435c4.22 0 7.652-3.433 7.652-7.652a.695.695 0 0 0-.695-.696H9.043a.695.695 0 0 0-.695.696c0 4.219 3.433 7.652 7.652 7.652z"></path>
+                    <div class="eapps-form-actions-container" eapps-link="actionsContainer"><div class="eapps-form-actions">
+
+    <div class="eapps-form-actions-button eapps-form-button" eapps-link="buttonSubmit">
+        <div class="eapps-form-actions-button-label">
+          Send feedback</div>
+        <div class="eapps-form-actions-button-loader"><div class="eapps-form-actions-button-loader-inner"></div></div>
+
+    </div> {% endcomment %}
+</div>
+</div>
+                </g>
+            </svg>
+        </span>
+    </label>
+</div></div>
 
   <div class="hero-foot">
     <nav class="tabs is-boxed is-fullwidth">
@@ -105,7 +222,7 @@
           <figure class="M & M">
             <label class="checkbox">
               
-              <form>
+              {% comment %} <form>
               {% for sleep in sleeps %}
               <p>{{sleep.name}}</p>
               <input type="checkbox">
@@ -113,7 +230,7 @@
               <hr>
               {% endfor %} 
               <button class="button is-success is-rounded">Submit</button>
-              </form>
+              </form> {% endcomment %}
               <!-- enter each sleep as a Sleep object in the database and the code will loop over them -->
               <!-- From here, you can use the info in the checkboxes to create SleepTracker objects with JavaScript -->
               <!-- <p>Sleepy</p>
@@ -143,9 +260,9 @@
           {% comment %} <nav><a href="{% url 'progress_bar' %}"><p class="subtitle">Mood Tracker</p></a></nav> {% endcomment %}
           <figure class="M & M">
             <label class="checkbox">
-              <form id='mood_tracker' method='POST'>
-              {% csrf_token %}
-               {% for mood in moods %}
+              {% comment %} <form id='mood_tracker' method='POST'>
+              {% csrf_token %} {% endcomment %}
+               {% comment %} {% for mood in moods %}
                <div id="{{mood.pk}}">
               <p>{{mood.name}}</p>
               <input type="checkbox">
@@ -154,7 +271,7 @@
               <hr>
               {% endfor %} 
               <button class="button is-success is-rounded">Submit</button>
-              </form>
+              </form> {% endcomment %}
               <!-- Same thing here that we did with sleep -->
                
               <!-- <p>smiling</p>
