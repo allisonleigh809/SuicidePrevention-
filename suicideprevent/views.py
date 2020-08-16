@@ -85,9 +85,9 @@ def progress_bar2(request):
 
       return render(request, "moods/progress_bar2.html")
 
-def index(request):
+def calendar(request):
 
-      return render(request, "moods/index.html")
+      return render(request, "moods/calendar.html")
 
 def submit_button(request):
 

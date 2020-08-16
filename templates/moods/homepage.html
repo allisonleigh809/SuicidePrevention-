@@ -89,8 +89,9 @@
     <div class="tile">
       <div class="tile is-parent is-vertical">
         <article class="tile is-child notification is-primary">
-          <p class="title">My Week!</p>
-          <nav><a href="{% url 'index' %}"<p class="subtitle">August 9-15</p></nav>
+          <nav><a href="{% url 'calendar' %}"><p class="title">My Week!</p></a></nav>
+          <p>Date: <input type="text" id="datepicker"></p>
+          {% comment %} <nav><a href="{% url 'calendar' %}"<p class="subtitle">August 9-15</p></nav> {% endcomment %}
         </article>
         <article class="tile is-child notification is-warning">
           <p class="title">Sleep</p>
@@ -223,8 +224,8 @@
   <div class="tile is-parent">
     <article class="tile is-child notification is-success">
       <div class="content">
-        <a href="{% url 'self_care' %}">Self Care
-    <a href="{% url 'health' %}">Health
+        <a href="{% url 'self_care' %}">
+    <a href="{% url 'health' %}">
         <p class="title">Motivation!</p></a></a>
         <p class="subtitle">With even more content</p>
         <div class="content">

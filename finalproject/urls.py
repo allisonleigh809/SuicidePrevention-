@@ -19,7 +19,7 @@ from django.conf import settings
 from django.urls import include, path
 from django.contrib.auth.views import LoginView, LogoutView
 from suicideprevent import views as suicideprevent_views
-from django.conf.urls.static import static
+
 
 urlpatterns = [
 
@@ -56,11 +56,11 @@ urlpatterns = [
 
     path('moods/progress_bar2/',suicideprevent_views.progress_bar2, name='progress_bar2'),
 
-    path('moods/index/',suicideprevent_views.index, name='index'),
+    path('moods/calendar/',suicideprevent_views.calendar, name='calendar'),
     path('moods/submit_button/',suicideprevent_views.submit_button, name='submit_button')
 
     
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
 
 
 if settings.DEBUG:

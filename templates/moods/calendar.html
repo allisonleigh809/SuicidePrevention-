@@ -1,24 +1,138 @@
 {% extends 'base.html' %}
+{% load static %}
+
 
 {% block title %}{% endblock title %}
+  {% block scripts %}
+  <script defer src="{% static 'js/main.js' %}"></script>
+  <script src="https://rawgit.com/theraot/emoji/master/emoji.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
+  {% endblock %}
   {% block content %}
- 
- <body>
-  <div class="container">
-    <header>
+ <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css"/>	
+
+<nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="{% url 'homepage' %}">M & M</a></li>
+    <li><a href="{% url 'self_care' %}">Self Care</a></li>
+    <li><a href="{% url 'resources' %}">Resources</a></li>
+    <li><a href="{% url 'health' %}">Health</a></li>
+    <li><a href="{% url 'opportunites' %}">Opportunites</a></li>
+    <li><a href="{% url 'adventures' %}">Adventures</a></li>
+    
+  </ul>
+</nav>
+
+<div class="container">
+	<div class="row">
+		<h1>Calendar of Moods & Sleep</h1>
+	</div>
+	<div class="row col-2">
+		<aside class="eventKey">
+			<h3>Mood Key</h3>
+			<div class="smiling">Smiling</div>
+			<div class="crying">Crying</div>
+			<div class="annoyed">Annoyed</div>
+			<div class="neutral">Neutral</div>
+      <div class="expressionless">Expressionless</div>
+      <div class="unamused">Unamused</div>
+      <div class="angry">Angry</div>
+      
+  <div class="row1 col-3">
+	    <h3>Sleep Key</h3>
+			<div class="sleepy">Sleepy</div>
+			<div class="tired">Tired</div>
+			<div class="restless">Restless</div>
+			<div class="goodSleep">Good Sleep</div>
+      <div class="greatSleep">Great Sleep</div>
+      
+		</aside>
+		<article>
+      <h3 class="monthYear"><span>,</span> August 2020 </h3>
+		  <ul class="days">
+		    <li>Sun</li>
+		    <li>Mon</li>
+		    <li>Tues</li>
+		    <li>Wed</li>
+		    <li>Thurs</li>
+		    <li>Fri</li>
+		    <li>Sat</li>
+		  </ul>
+			<ul class="dates">
+        <li class="fade"><span class="date">29</span></li>
+        <li class="fade"><span class="date">30</span></li>
+				<li><span class="date">1</span></li>
+				<li>
+          <section class="dateWrapper">
+					<span class="date">2</span>
+					<div class="multidayHolder"><a href="#" class="multidayEvent smiling length-2">Smiling</a></div>
+          </section>
+				</li>
+				<li class="current today">
+            <section class="dateWrapper">
+              <span class="date">3</span>
+              <div class="multidayHolder"><a href="#" class="multidayEvent annoyed secondaryDay">Annoyed</a></div>
+              </span></a>
+             </section>
+		    	</li>
+				<li><span class="date">4</span>
+				<li><span class="date">5</span></li>
+				<li><span class="date">6</span></li>
+				<li><span class="date">7</span>
+				<li><span class="date">8</span>
+				<li><span class="date">9</span>
+				<li><span class="date">10</span>
+				<li><span class="date">11</span>
+				<li><span class="date">12</span>
+				<li><span class="date">13</span>
+				<li><span class="date">14</span>
+				<li><span class="date">15</span>
+        <div class="multidayHolder"><a href="#" class="multidayEvent annoyed length-2">Annoyed</a></div>
+          </section>
+				<li><span class="date">16</span>
+				<li><span class="date">17</span>
+				<li><span class="date">18</span>
+				<li><span class="date">19</span>
+				<li><span class="date">20</span>
+				<li><span class="date">21</span> 
+				<li><span class="date">22</span>
+				<li><span class="date">23</span>
+				<li><span class="date">24</span>
+				<li><span class="date">25</span>
+				<li><span class="date">26</span>
+				<li><span class="date">27</span>
+				<li><span class="date">28</span>
+				<li><span class="date">29</span>
+				<li><span class="date">30</span>
+		    <li><span class="date">31</span>
+				<li class="fade"><span class="date">1</span></li>
+				<li class="fade"><span class="date">2</span></li>
+			</ul>
+      <div class="calendarNav">
+      	<a href="#prevDay" class="prevDay">Previous Day</a> 
+      	<a href="#today" class="today">Current Day</a>
+      	<a href="#" class="nextDay">Next Day</a>
+      </div>
+		</article>
+	</div>
+</div>
+
+
+
+  {% comment %} <header>
       <h2>2020 Mood Calendar</h2>
       <p>keep track of your mood</p>
       <div class="mood-selector">
         Select mood:
-        <div id="selector">
-          <i id="mood" style="font-size:30px">&#128512;</i>
+        <div id="selector"> {% endcomment %}
+          {% comment %} <i id="mood" style="font-size:30px">&#128512;</i>
           <i id="mood" style="font-size:30px">&#128546;</i>
           <i id="mood" style="font-size:30px">&#128580;</i>
           <i id="mood" style="font-size:30px">&#128528;</i>
           <i id="mood" style="font-size:30px">&#128529;</i>
           <i id="mood" style="font-size:30px">&#128530;</i>  
-          <i id="mood" style="font-size:30px">&#128545;</i>    
-        </div>
+          <i id="mood" style="font-size:30px">&#128545;</i>     {% endcomment %}
+        {% comment %} </div>
       </div>  
     </header>
     <main id="main">
@@ -37,7 +151,7 @@
   
   
 </body>
-</html>  
+</html>     {% endcomment %}
 
-  
+   
 {% endblock %}
