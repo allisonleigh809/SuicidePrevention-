@@ -52,8 +52,14 @@
       <p class="subtitle">
         You Matter!
       </p>
+      <img style="-webkit-user-select: none;margin: auto;" src="https://www.sanvello.com/img/mood-chars.png">
     </div>
   </div>
+  <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-3c53c8c0-0cd9-4487-a11b-6f02a24e1e37"></div>
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-e54ab9ee-3d35-4ff3-b2e7-5785621c171c"></div>
+    </div>
 
   <div class="hero-foot">
     <nav class="tabs is-boxed is-fullwidth">
@@ -95,7 +101,7 @@
         </article>
         <article class="tile is-child notification is-warning">
           <p class="title">Sleep</p>
-          <nav><a href="{% url 'progress_bar2' %}"><p class="subtitle">Sleep Chart</p></nav>
+          {% comment %} <nav><a href="{% url 'progress_bar2' %}"><p class="subtitle">Sleep Chart</p></nav> {% endcomment %}
           <figure class="M & M">
             <label class="checkbox">
               
@@ -134,7 +140,7 @@
       <div class="tile is-parent">
         <article class="tile is-child notification is-info">
           <p class="title">Moods</p>
-          <nav><a href="{% url 'progress_bar' %}"><p class="subtitle">Mood Tracker</p></a></nav>
+          {% comment %} <nav><a href="{% url 'progress_bar' %}"><p class="subtitle">Mood Tracker</p></a></nav> {% endcomment %}
           <figure class="M & M">
             <label class="checkbox">
               <form id='mood_tracker' method='POST'>
@@ -214,7 +220,7 @@
       <article class="tile is-child notification is-danger">
         <button class="button is-warning is-hovered"
         <p class="title"><nav><a href="{% url 'resources' %}">Reach Out Resources</p></button></a>
-        <p class="subtitle">List of Resources and Contacts</p>
+        <p><a href="https://adaa.org/finding-help/blackcommunitymentalhealth/"target="_blank">Anixety & Depression Association of America</a><p>
         <div class="content">
           <!-- Content -->
         </div>
