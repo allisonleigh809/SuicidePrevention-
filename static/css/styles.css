@@ -178,7 +178,7 @@ h3 { font-size:21px; }
   text-align:left;
   text-decoration:none;
   font-size: 12px;
-  color:#fff;
+  color:black;
   border-radius:2px;
 }
 .dates li a, .dates li div {
@@ -219,6 +219,7 @@ h3 { font-size:21px; }
   height:20px;
   padding:0;
   margin:4px 0 0 0;
+  background-color: #87e842;
 }
 .dates li a.multidayEvent {
   position: absolute; 
@@ -229,20 +230,17 @@ h3 { font-size:21px; }
   margin:0;
 }
 .multidayEvent span, .holiday span  { display:none;}
-.dates li a.length-2 {width:196%; display:block; }
-.dates li a.length-3 {width:301%; display:block;}
-.smiling, .smiling:before { background:#87e842; color:#fff;}
-.crying, .crying:before { background:#446683; color:#fff;}
-.annoyed, .annoyed:before { background:#d8660e; color:#fff;}
-.neutral, .neutral:before { background:#9ba29c; color:#fff;}
-.expressionless, .expressionless:before { background:#e4f805; color:#fff;}
-.unamused, .unamused:before { background:#0572f8; color:#fff;}
-.angry, .angry:before { background:#f80532; color:#fff;}
-.sleepy, .sleepy:before { background:#1805e6; color:#fff;}
+.dates li a.length-2 {width:100%; display:block; }
+.sad, .sad:before { background:#7157F1ED; color:#fff;}
+.happy, .happy:before { background:#FFDD57; color:#fff;}
+.excited, .excited:before { background:#23D160; color:#fff;}
+.neutral, .neutral:before { background:#209CEE; color:#fff;}
+.angry, .angry:before { background:#FF3860; color:#fff;}
+/* .sleepy, .sleepy:before { background:#1805e6; color:#fff;}
 .tired, .tired:before { background:#4a262c; color:#fff;}
 .restless, .restless:before { background:#aba805; color:#fff;}
 .goodSleep, .goodSleep:before { background:#efff41; color:#fff;}
-.greatSleep, .greatSleep:before { background:#05f8a3; color:#fff;}
+.greatSleep, .greatSleep:before { background:#05f8a3; color:#fff;} */
 .calendarNav {
   display:none;
 }

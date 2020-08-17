@@ -68,30 +68,16 @@ def self_care(request):
 def resources(request):
       return render(request, "moods/resources.html")
 
-def health(request):
-      return render(request, "moods/health.html")
-
-def opportunites(request):
-      return render(request, "moods/opportunites.html")
-
-def adventures(request):
-      return render(request, "moods/adventures.html")
-
-
-def progress_bar(request):
-      return render(request, "moods/progress_bar.html")
-
-def progress_bar2(request):
-
-      return render(request, "moods/progress_bar2.html")
 
 def calendar(request):
+      moods = MoodTracker.objects.filter(user=request.user, date_added__year="2020", date_added__month="06")
+      
+      context = {
+          "moods": moods
+      }
+      return render(request, "moods/calendar.html", context) 
+      
 
-      return render(request, "moods/calendar.html")
-
-def submit_button(request):
-
-      return render(request, "moods/submit_button.html")
 
 
 

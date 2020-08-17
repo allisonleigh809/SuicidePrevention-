@@ -5,6 +5,9 @@
   <script defer src="{% static 'js/main.js' %}"></script>
   <script src="https://rawgit.com/theraot/emoji/master/emoji.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+  <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+  
   {% endblock %}
 {% block content %}
 <section class="hero is-info is-medium">
@@ -12,9 +15,7 @@
 		<nav class="navbar">
 			<div class="container">
 				<div class="navbar-brand">
-					<a class="navbar-item">
-						<img src="https://www.canva.com/design/DAEDkgCU4oU/JkC6y8RbWifCBnt2XG3EWA/view?utm_content=DAEDkgCU4oU&utm_campaign=designshare&utm_medium=link&utm_source=viewer"="Logo">
-          </a>
+					<a class="navbar-item"></a>
           <span class="navbar-burger burger" data-target="navbarMenuHeroB">
             <span></span>
             <span></span>
@@ -28,18 +29,6 @@
               <i class="fa fa-home"></i>
               Home
             </a>
-            <a class="navbar-item">Profile
-            
-            <!-- </a>
-            <a class="navbar-item">
-              Documentation
-            </a> -->
-            <!-- <span class="navbar-item">
-              <a class="button is-info is-inverted">
-                <span class="icon">
-                <i class="fas fa-home"></i>
-            </span>
-                <span>Download</span> -->
                 
               </a>
             </span>
@@ -60,11 +49,10 @@
       <img style="-webkit-user-select: none;margin: auto;" src="https://www.sanvello.com/img/mood-chars.png">
     </div>
   </div>
-  <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-<div class="elfsight-app-3c53c8c0-0cd9-4487-a11b-6f02a24e1e37"></div>
-<script src="https://apps.elfsight.com/p/platform.js" defer></script>
-<div class="elfsight-app-e54ab9ee-3d35-4ff3-b2e7-5785621c171c"></div>
-    </div> 
+  <div id="truthButton">
+  <div class="elfsight-app-3c53c8c0-0cd9-4487-a11b-6f02a24e1e37"></div>
+  </div>
+  
 
 <div class="eapps-form-element-container" eapps-link="container"><div class="eapps-form-element-scale-smiles-options">
     <label class="eapps-form-element-scale-smiles-options-item" for="how-would-you-rate-our-service-0-awful">
@@ -127,7 +115,7 @@
         </span>
     </label>
 
-    <label class="eapps-form-element-scale-smiles-options-item" for="how-would-you-rate-our-service-0-good">
+    {% comment %} <label class="eapps-form-element-scale-smiles-options-item" for="how-would-you-rate-our-service-0-good">
         <input type="radio" name="how-would-you-rate-our-service-0" id="how-would-you-rate-our-service-0-good" value="good" class="">
 
         <span class="eapps-form-element-scale-smiles-options-item-icon">
@@ -145,7 +133,7 @@
                   </g>
             </svg>
         </span>
-    </label>
+    </label> {% endcomment %}
 
     {% comment %} <label class="eapps-form-element-scale-smiles-options-item" for="how-would-you-rate-our-service-0-awesome">
         <input type="radio" name="how-would-you-rate-our-service-0" id="how-would-you-rate-our-service-0-awesome" value="awesome" class="">
@@ -186,19 +174,13 @@
             <nav><a href="{% url 'homepage' %}">M & M</a>
           </li>
           <li>
-           <nav><a href="{% url 'self_care' %}">Self Care </a></nav>
+           <nav><a href="{% url 'self_care' %}">Self Care/Health </a></nav>
           </li>
           <li>
             <nav><a href="{% url 'resources' %}">Resources</a></nav>
           </li>
           <li>
-            <nav><a href="{% url 'health' %}">Health</a></nav>
-          </li>
-          <li>
-            <nav><a href="{% url 'opportunites' %}">Opportunites</a></nav>
-          </li>
-          <li>
-            <nav><a href="{% url 'adventures' %}">Adventures</a></nav>
+            <nav><a href="{% url 'calendar' %}">Calendar</a></nav>
           </li>
         </ul>
       </div>
@@ -212,123 +194,24 @@
     <div class="tile">
       <div class="tile is-parent is-vertical">
         <article class="tile is-child notification is-primary">
-          <nav><a href="{% url 'calendar' %}"><p class="title">My Week!</p></a></nav>
-          <p>Date: <input type="text" id="datepicker"></p>
+          {% comment %} <nav><a href="{% url 'calendar' %}"></a></nav> {% endcomment %}
+          <p class="title">Hello Jackie!</p>
+          
           {% comment %} <nav><a href="{% url 'calendar' %}"<p class="subtitle">August 9-15</p></nav> {% endcomment %}
         </article>
         <article class="tile is-child notification is-warning">
-          <p class="title">Sleep</p>
-          {% comment %} <nav><a href="{% url 'progress_bar2' %}"><p class="subtitle">Sleep Chart</p></nav> {% endcomment %}
-          <figure class="M & M">
-            <label class="checkbox">
-              
-              {% comment %} <form>
-              {% for sleep in sleeps %}
-              <p>{{sleep.name}}</p>
-              <input type="checkbox">
-              <p style="font-size:30px">{{sleep.smile_emoji}}</p>
-              <hr>
-              {% endfor %} 
-              <button class="button is-success is-rounded">Submit</button>
-              </form> {% endcomment %}
-              <!-- enter each sleep as a Sleep object in the database and the code will loop over them -->
-              <!-- From here, you can use the info in the checkboxes to create SleepTracker objects with JavaScript -->
-              <!-- <p>Sleepy</p>
-              <input type="checkbox">
-              <p style="font-size:30px">&#128554;</p>
-              <hr>
-              <p>Tired</p>
-              <input type="checkbox">
-              <p style="font-size:30px">&#128555;</p>
-              <hr>
-              <p>Rest Less</p>
-              <input type="checkbox">
-              <p style="font-size:30px">&#128580;</p>
-              <hr>
-              <p>Good Sleep</p>
-              <input type="checkbox">
-              <p style="font-size:30px">&#128524;</p>
-              <hr>
-              <p>Great Sleep</p>
-              <input type="checkbox">
-              <p style="font-size:30px">&#129321;</p> -->
+          <p class="title">Featured Job Listing</p>
+          <a href="https://peopleofcolorintech.com/"target="_blank">People of Color in Tech</a>
+          
+          
         </article>
       </div>
       <div class="tile is-parent">
         <article class="tile is-child notification is-info">
-          <p class="title">Moods</p>
-          {% comment %} <nav><a href="{% url 'progress_bar' %}"><p class="subtitle">Mood Tracker</p></a></nav> {% endcomment %}
-          <figure class="M & M">
-            <label class="checkbox">
-              {% comment %} <form id='mood_tracker' method='POST'>
-              {% csrf_token %} {% endcomment %}
-               {% comment %} {% for mood in moods %}
-               <div id="{{mood.pk}}">
-              <p>{{mood.name}}</p>
-              <input type="checkbox">
-              <p style="font-size:30px">{{mood.smile_emoji}}</p>
-              </div>
-              <hr>
-              {% endfor %} 
-              <button class="button is-success is-rounded">Submit</button>
-              </form> {% endcomment %}
-              <!-- Same thing here that we did with sleep -->
-               
-              <!-- <p>smiling</p>
-              <input type="checkbox">
-              <p style="font-size:30px">&#128512;</p>
-              <hr>
-              <p>crying</p>
-              <input type="checkbox">
-              <p style="font-size:30px">&#128546;</p>
-              <hr>
-              <p>annoyed</p>
-              <input type="checkbox">
-              <p style="font-size:30px">&#128580;</p>
-              <hr>
-              <p>neutral</p>
-              <input type="checkbox">
-              <p style="font-size:30px">&#128528;</p>
-              <hr>
-              <p>expressionless</p>
-              <input type="checkbox">
-              <p style="font-size:30px">&#128529;</p>
-              <hr>
-              <p>unamused</p>
-              <input type="checkbox">
-              <p style="font-size:30px">&#128530;</p>
-
-              <p>angry</p>
-              <input type="checkbox">
-              <p style="font-size:30px">&#128545;</p>
-             -->
-  <!-- <ul>
-  <input type="checkbox">
-<span class="icon">
-<i class="far fa-smile"></i>
-</ul>
-
-<ul>
-  <input type="checkbox">
-<span class="icon">
-<i class="far fa-frown"></i>
-</ul>
-
-<ul>
-<input type="checkbox">
-<span class="icon">
-<i class="far fa-meh"></i>
-</ul>
-
-<ul>
-<input type="checkbox">
-<span class="icon">
-<i class="far fa-sa-tear"></i>
-</ul>
-</span>
-</label> -->
-
-            <!-- <img src="https://cdn2.vectorstock.com/i/thumb-large/20/96/african-american-woman-face-profile-beauty-sign-vector-1352096.jpg"> -->
+          <p class="title">Featured Self Care</p>
+          
+          
+              
           </figure>
         </article>
       </div>
@@ -348,9 +231,8 @@
     <article class="tile is-child notification is-success">
       <div class="content">
         <a href="{% url 'self_care' %}">
-    <a href="{% url 'health' %}">
         <p class="title">Motivation!</p></a></a>
-        <p class="subtitle">With even more content</p>
+        <p class="subtitle">Daily Quote (link to a daily quote website)</p>
         <div class="content">
           <!-- Content -->
         </div>

@@ -43,21 +43,10 @@ urlpatterns = [
 
     path('moods/self_care/',suicideprevent_views.self_care, name='self_care'),
     # put in profile and mood tracker in url
-   
-   path('moods/health/',suicideprevent_views.health, name='health'),
-
-   path('moods/opportunites/',suicideprevent_views.opportunites, name='opportunites'),
-
-   path('moods/adventures/',suicideprevent_views.adventures, name='adventures'),
-
    path('moods/resources/',suicideprevent_views.resources, name='resources'),
 
-   path('moods/progress_bar/',suicideprevent_views.progress_bar, name='progress_bar'),
-
-    path('moods/progress_bar2/',suicideprevent_views.progress_bar2, name='progress_bar2'),
-
-    path('moods/calendar/',suicideprevent_views.calendar, name='calendar'),
-    path('moods/submit_button/',suicideprevent_views.submit_button, name='submit_button')
+   path('moods/calendar/',suicideprevent_views.calendar, name='calendar'),
+    
 
     
 ]

@@ -14,41 +14,37 @@
 <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
   <ul>
     <li><a href="{% url 'homepage' %}">M & M</a></li>
-    <li><a href="{% url 'self_care' %}">Self Care</a></li>
+    <li><a href="{% url 'self_care' %}">Self Care/Health</a></li>
     <li><a href="{% url 'resources' %}">Resources</a></li>
-    <li><a href="{% url 'health' %}">Health</a></li>
-    <li><a href="{% url 'opportunites' %}">Opportunites</a></li>
-    <li><a href="{% url 'adventures' %}">Adventures</a></li>
+    
+    
     
   </ul>
 </nav>
-
 <div class="container">
 	<div class="row">
-		<h1>Calendar of Moods & Sleep</h1>
+		<h1>Calendar of Moods</h1>
 	</div>
 	<div class="row col-2">
 		<aside class="eventKey">
 			<h3>Mood Key</h3>
-			<div class="smiling">Smiling</div>
-			<div class="crying">Crying</div>
-			<div class="annoyed">Annoyed</div>
+			<div class="happy">Happy</div>
+			<div class="sad">Sad</div>
+			<div class="excited">Excited</div>
 			<div class="neutral">Neutral</div>
-      <div class="expressionless">Expressionless</div>
-      <div class="unamused">Unamused</div>
       <div class="angry">Angry</div>
       
-  <div class="row1 col-3">
+  {% comment %} <div class="row1 col-3">
 	    <h3>Sleep Key</h3>
 			<div class="sleepy">Sleepy</div>
 			<div class="tired">Tired</div>
 			<div class="restless">Restless</div>
 			<div class="goodSleep">Good Sleep</div>
-      <div class="greatSleep">Great Sleep</div>
+      <div class="greatSleep">Great Sleep</div> {% endcomment %}
       
 		</aside>
 		<article>
-      <h3 class="monthYear"><span>,</span> August 2020 </h3>
+      <h3 class="monthYear"><span>,</span> June 2020 </h3>
 		  <ul class="days">
 		    <li>Sun</li>
 		    <li>Mon</li>
@@ -61,52 +57,227 @@
 			<ul class="dates">
         <li class="fade"><span class="date">29</span></li>
         <li class="fade"><span class="date">30</span></li>
-				<li><span class="date">1</span></li>
+				<li><span class="date">1</span>
+        {% for mood in moods %}
+        {% if mood.date_added.day == 1 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
+        </li>
+
+
 				<li>
           <section class="dateWrapper">
 					<span class="date">2</span>
-					<div class="multidayHolder"><a href="#" class="multidayEvent smiling length-2">Smiling</a></div>
+				{% for mood in moods %}
+        {% if mood.date_added.day == 2 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
           </section>
 				</li>
 				<li class="current today">
             <section class="dateWrapper">
               <span class="date">3</span>
-              <div class="multidayHolder"><a href="#" class="multidayEvent annoyed secondaryDay">Annoyed</a></div>
+              {% for mood in moods %}
+        {% if mood.date_added.day == 3 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
               </span></a>
              </section>
 		    	</li>
 				<li><span class="date">4</span>
-				<li><span class="date">5</span></li>
-				<li><span class="date">6</span></li>
-				<li><span class="date">7</span>
-				<li><span class="date">8</span>
-				<li><span class="date">9</span>
-				<li><span class="date">10</span>
-				<li><span class="date">11</span>
-				<li><span class="date">12</span>
-				<li><span class="date">13</span>
-				<li><span class="date">14</span>
+        {% for mood in moods %}
+        {% if mood.date_added.day == 4 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
+				<li><span class="date">5</span>
+        {% for mood in moods %}
+        {% if mood.date_added.day == 5 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
+        </li>
+				<li><span class="date">6</span>
+        {% for mood in moods %}
+        {% if mood.date_added.day == 6 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
+        </li>
+				<li><span class="date">7
+        {% for mood in moods %}
+        {% if mood.date_added.day == 7 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
+        </span>
+				<li><span class="date">8
+        {% for mood in moods %}
+        {% if mood.date_added.day == 8 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
+        </span>
+				<li><span class="date">9
+        {% for mood in moods %}
+        {% if mood.date_added.day == 9 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
+        </span>
+				<li><span class="date">10
+        {% for mood in moods %}
+        {% if mood.date_added.day == 10 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
+        </span>
+				<li><span class="date">11
+        {% for mood in moods %}
+        {% if mood.date_added.day == 11 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
+        </span>
+				<li><span class="date">12
+        {% for mood in moods %}
+        {% if mood.date_added.day == 12 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
+        </span>
+				<li><span class="date">13
+        {% for mood in moods %}
+        {% if mood.date_added.day == 13 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
+        </span>
+				<li><span class="date">14
+        {% for mood in moods %}
+        {% if mood.date_added.day == 14 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
+        </span>
 				<li><span class="date">15</span>
-        <div class="multidayHolder"><a href="#" class="multidayEvent annoyed length-2">Annoyed</a></div>
+        {% for mood in moods %}
+        {% if mood.date_added.day == 15 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
           </section>
-				<li><span class="date">16</span>
-				<li><span class="date">17</span>
-				<li><span class="date">18</span>
-				<li><span class="date">19</span>
-				<li><span class="date">20</span>
-				<li><span class="date">21</span> 
-				<li><span class="date">22</span>
-				<li><span class="date">23</span>
-				<li><span class="date">24</span>
-				<li><span class="date">25</span>
-				<li><span class="date">26</span>
-				<li><span class="date">27</span>
-				<li><span class="date">28</span>
-				<li><span class="date">29</span>
-				<li><span class="date">30</span>
-		    <li><span class="date">31</span>
+				<li><span class="date">16
+        {% for mood in moods %}
+        {% if mood.date_added.day == 16 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
+        </span>
+				<li><span class="date">17
+        {% for mood in moods %}
+        {% if mood.date_added.day == 17 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
+        </span>
+				<li><span class="date">18
+        {% for mood in moods %}
+        {% if mood.date_added.day == 18 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
+        </span>
+				<li><span class="date">19
+        {% for mood in moods %}
+        {% if mood.date_added.day == 19 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
+        </span>
+				<li><span class="date">20
+        {% for mood in moods %}
+        {% if mood.date_added.day == 20 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
+        </span>
+				<li><span class="date">21
+        {% for mood in moods %}
+        {% if mood.date_added.day == 21 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
+        </span> 
+				<li><span class="date">22
+        {% for mood in moods %}
+        {% if mood.date_added.day == 22 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
+        </span>
+				<li><span class="date">23
+        {% for mood in moods %}
+        {% if mood.date_added.day == 23 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
+        </span>
+				<li><span class="date">24
+        {% for mood in moods %}
+        {% if mood.date_added.day == 24 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
+        </span>
+				<li><span class="date">25
+        {% for mood in moods %}
+        {% if mood.date_added.day == 25 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
+        </span>
+				<li><span class="date">26
+        {% for mood in moods %}
+        {% if mood.date_added.day == 26 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
+        </span>
+				<li><span class="date">27
+        {% for mood in moods %}
+        {% if mood.date_added.day == 27 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
+        </span>
+				<li><span class="date">28
+        {% for mood in moods %}
+        {% if mood.date_added.day == 28 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
+        </span>
+				<li><span class="date">29
+        {% for mood in moods %}
+        {% if mood.date_added.day == 29 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
+        </span>
+				<li><span class="date">30
+        {% for mood in moods %}
+        {% if mood.date_added.day == 30 %}
+        <div class="multidayHolder"><a href="#" class="multidayEvent {{mood.mood.name.lower}} length-2">{{mood.mood.name}}</a></div>
+        {% endif %}
+        {% endfor %} 
+        </span>
 				<li class="fade"><span class="date">1</span></li>
 				<li class="fade"><span class="date">2</span></li>
+        <li class="fade"><span class="date">3</span></li>
 			</ul>
       <div class="calendarNav">
       	<a href="#prevDay" class="prevDay">Previous Day</a> 
